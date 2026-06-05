@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이수영 포트폴리오</title>
-  <!-- 폰트 및 아이콘 라이브러리 연동 -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
@@ -12,22 +11,22 @@
 
   <div class="layout-wrapper">
     
-    <!-- LEFT SIDEBAR: 프로필 영역 (고정) -->
     <aside class="sidebar">
       <div class="sidebar-sticky">
         <div class="profile-avatar">
-          <!-- 사진 파일명을 profile.jpg로 저장하여 같은 폴더에 넣어주세요 -->
           <img src="profile.jpg" alt="이수영 프로필 사진" onerror="this.src='https://via.placeholder.com/150';">
         </div>
         <h1 class="profile-name">이수영</h1>
         <div class="profile-typing">
-          I'm a <span id="typed-text"></span>
+          I'm an <span id="typed-text"></span>
         </div>
         
         <nav class="sidebar-nav">
           <a href="#about"><i class="fa-regular fa-user"></i> About Me</a>
           <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
-          <a href="#projects"><i class="fa-solid fa-briefcase"></i> Projects</a>
+          <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
+          <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+          <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education & Awards</a>
           <a href="#contact"><i class="fa-regular fa-envelope"></i> Contact</a>
         </nav>
 
@@ -38,181 +37,268 @@
       </div>
     </aside>
 
-    <!-- RIGHT CONTENT: 상세 내용 영역 (스크롤) -->
     <main class="main-content">
 
-      <!-- ABOUT SECTION -->
       <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
         <div class="about-hero">
           <p class="lead-text">
-            "센서 데이터와 로봇 시스템을 실제로 동작하는 결과물로 연결하는 개발자입니다."[cite: 1]
+            "센서 데이터와 로봇 시스템을 실제로 동작하는 결과물로 연결하는 임베디드SW 개발자입니다." [cite: 221]
           </p>
           <p>
-            ESP32 기반 펌웨어 개발부터 Jetson 환경의 ROS2 시스템까지, 하드웨어와 소프트웨어의 통합 최적화를 지향합니다.[cite: 1]
-            센서 값이 단순히 출력되는 것을 넘어, 로봇과 상위 시스템이 100% 신뢰할 수 있는 데이터로 가공 및 필터링되는 파이프라인 구조를 구축하는 과정을 가장 중요하게 생각합니다.[cite: 1]
+            조경학 전공 후 플랜테리어 공간 기획 현장에서 가변적인 문제를 주도적으로 해결하며 협업 태도를 길렀습니다[cite: 264, 269, 270]. 이후 SSAFY를 통해 임베디드 및 로봇 시스템 개발자로 터닝하여 [cite: 228, 273], 하드웨어의 로우 레벨 신호부터 상위 제어 시스템 최적화까지 아우르는 파이프라인을 구축해 나가고 있습니다[cite: 3, 4, 223].
           </p>
         </div>
 
         <div class="about-highlights">
           <div class="highlight-item">
             <div class="icon-wrap"><i class="fa-solid fa-microchip"></i></div>
-            <h4>센서 수집 안정화</h4>
-            <p>EMG 4채널 및 IMU 3개 동시 수집 펌웨어를 설계하여, 로우레벨 신호를 상위 시스템이 즉시 활용 가능한 데이터로 변환합니다.[cite: 1]</p>
+            <h4>센서 이해 및 수집 안정화 [cite: 301]</h4>
+            <p>EMG 4채널 및 IMU 3개 동시 수집 펌웨어를 설계하여 [cite: 17, 235], 원천 신호를 상위 판단 로직이 즉시 신뢰할 수 있는 데이터로 정제합니다[cite: 241].</p>
           </div>
           <div class="highlight-item">
-            <div class="icon-wrap"><i class="fa-solid fa-eye"></i></div>
-            <h4>로봇 Perception</h4>
-            <p>RGB/Depth 이미지 동기화, 객체 인식 및 거리 추정을 처리하여 실시간 환경 제어 데이터를 가공합니다.[cite: 1]</p>
+            <div class="icon-wrap"><i class="fa-solid fa-shield-halved"></i></div>
+            <h4>실제 장애 대응 및 시스템 안정화 [cite: 301]</h4>
+            <p>제한된 리소스 환경에서 OOM, Race Condition, I2C 버스 충돌 및 센서 이탈 오류를 정밀하게 디버깅하고 최적화한 경험이 있습니다[cite: 239, 251, 252, 286, 301].</p>
           </div>
           <div class="highlight-item">
-            <div class="icon-wrap"><i class="fa-solid fa-robot"></i></div>
-            <h4>실행 검증 파이프라인</h4>
-            <p>3D Bin Packing 결과를 로봇팔 배치 명령 좌표계로 정밀 변환하여 가상 시뮬레이션 공정을 성공적으로 검증합니다.[cite: 1]</p>
+            <div class="icon-wrap"><i class="fa-solid fa-magnifying-glass-chart"></i></div>
+            <h4>다각도 검증 구조 설계 [cite: 301]</h4>
+            <p>mock sensor, host test 기반의 하드웨어 비의존 검증 [cite: 240]과 Isaac Sim 디지털 트윈 환경을 활용한 로봇팔 실행 검증을 지향합니다[cite: 257, 291, 292].</p>
           </div>
         </div>
       </section>
 
-      <!-- SKILLS SECTION -->
       <section id="skills" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Skills</h2>
-          <p class="section-subtitle">로봇 하드웨어 제어부터 상위 시뮬레이션 및 데이터 처리가 가능한 기술 스택입니다.</p>
+          <p class="section-subtitle">임베디드 하드웨어 제어부터 상위 인지, 통신, 시뮬레이션까지 보유한 핵심 기술 스택입니다[cite: 223].</p>
           
           <div class="skills-grid">
             <div class="skill-box">
               <h3><i class="fa-solid fa-terminal"></i> Programming</h3>
-              <p>C / C++, Python, JavaScript, SQL, SQLite, Django, Vue.js[cite: 1]</p>
+              <p class="skill-desc">개발 언어 및 웹/데이터 처리 기반 기술 [cite: 43]</p>
+              <div class="skill-tags">
+                <span>C / C++</span><span>Python</span><span>JavaScript</span><span>SQL</span><span>SQLite</span><span>Django</span><span>Vue.js</span>
+              </div>
             </div>
             <div class="skill-box">
               <h3><i class="fa-solid fa-gear"></i> Robotics & Embedded</h3>
-              <p>ROS2 Humble, ESP-IDF, ESP32, Jetson Orin Nano, Embedded Linux, Robot Perception, AIoT, SLAM[cite: 1]</p>
+              <p class="skill-desc">로봇 시스템, 임베디드 리눅스, 센서 연동 [cite: 44]</p>
+              <div class="skill-tags">
+                <span>ROS2 Humble</span><span>ESP-IDF</span><span>ESP32 / ESP32-S3</span><span>Jetson Orin Nano</span><span>Embedded Linux</span><span>Robot Perception</span><span>AIoT</span><span>RTAB-Map / SLAM</span>
+              </div>
+            </div>
+            <div class="skill-box">
+              <h3><i class="fa-solid fa-share-nodes"></i> Communication & Data</h3>
+              <p class="skill-desc">안정적인 데이터 송수신 및 프로토콜 설계 [cite: 223]</p>
+              <div class="skill-tags">
+                <span>MQTT</span><span>USB Serial</span><span>BINARY_V2 (64-byte fixed frame)</span><span>CRC16</span><span>Mosquitto Broker</span><span>WebSocket</span>
+              </div>
             </div>
             <div class="skill-box">
               <h3><i class="fa-solid fa-brain"></i> AI & Computer Vision</h3>
-              <p>YOLOv8, TensorRT, OpenCV, Computer Vision, 3D Bin Packing, PyTorch[cite: 1]</p>
+              <p class="skill-desc">객체 인식, 영상 처리, 추론 최적화 [cite: 60]</p>
+              <div class="skill-tags">
+                <span>YOLOv8</span><span>TensorRT FP16</span><span>OpenCV</span><span>PyTorch</span><span>Computer Vision</span>
+              </div>
             </div>
             <div class="skill-box">
-              <h3><i class="fa-solid fa-server"></i> Simulation & Infra</h3>
-              <p>NVIDIA Isaac Sim, Simulation, Autonomous Driving, MQTT, Docker, Ubuntu, Git[cite: 1]</p>
+              <h3><i class="fa-solid fa-cubes"></i> Simulation & Verification</h3>
+              <p class="skill-desc">시뮬레이션 환경 구축 및 물리 동작 검증 [cite: 66, 226]</p>
+              <div class="skill-tags">
+                <span>NVIDIA Isaac Sim</span><span>3D Bin Packing</span><span>Beam Search</span><span>UR20 Robot Arm</span><span>Coordinate Transform</span><span>Robot Verification</span>
+              </div>
+            </div>
+            <div class="skill-box">
+              <h3><i class="fa-solid fa-screwdriver-wrench"></i> Tools & Infra</h3>
+              <p class="skill-desc">컨테이너 기반 인프라 및 협업 도구 [cite: 38, 226]</p>
+              <div class="skill-tags">
+                <span>Git</span><span>Docker</span><span>Docker Compose</span><span>Ubuntu</span><span>VS Code</span><span>Raspberry Pi</span>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- PROJECTS SECTION (타임라인 형태) -->
-      <section id="projects" class="content-section">
-        <h2 class="section-title">Projects</h2>
-        <p class="section-subtitle">2026년에 수행한 핵심 개발 프로젝트 타임라인입니다.[cite: 1]</p>
-
-        <div class="timeline">
-          
-          <!-- SSARA -->
-          <div class="timeline-item">
-            <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <span class="project-duration">2026.01 - 2026.02 (6인 팀)</span>[cite: 1]
-                <h3 class="project-name">SSARA <span class="status-tag">완료</span></h3>[cite: 1]
-                <p class="project-role">시각장애인 안내용 자율주행 4족 보행 로봇 (Perception & System Engineering)</p>[cite: 1]
-              </div>
-              <div class="timeline-body">
-                <div class="project-tags">
-                  <span>Jetson</span><span>ROS2</span><span>YOLOv8</span><span>RTAB-Map SLAM</span><span>MQTT</span>[cite: 1]
-                </div>
-                <p>시각장애인의 안전한 이동 보조를 위해 Depth 센서 기반 실시간 SLAM 및 객체 인식 파이프라인을 구축했습니다.[cite: 1]</p>
-                <ul>
-                  <li><strong>RGB-D 시간 동기화:</strong> 객체 인식 바운딩 박스와 Depth 거리 정보를 매핑하여 타겟 객체의 정확한 중심 주변 거리 산출[cite: 1]</li>
-                  <li><strong>데이터 안정화:</strong> 노이즈가 심한 외곽 값을 제외하고 median(중앙값) 필터를 적용하여 거리 추정 신뢰도 확보[cite: 1]</li>
-                  <li><strong>엣지 성능 최적화:</strong> TensorRT 연산 엔진 도입 및 skip_rate=5 프레임 드롭 처리를 통해 실효 추론 속도(6FPS)와 인식 성능의 실시간 균형 확보[cite: 1]</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://github.com/dltndud0313/IMO" target="_blank"><i class="fa-brands fa-github"></i> GitHub 저장소 보기</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- 적재적소 -->
-          <div class="timeline-item">
-            <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <span class="project-duration">2026.02 - 2026.03 (6인 팀)</span>[cite: 1]
-                <h3 class="project-name">적재적소 <span class="status-tag">완료</span></h3>[cite: 1]
-                <p class="project-role">물류 롤테이너 적재 자동화 시스템 (알고리즘 검증 & 파이프라인 구축)</p>[cite: 1]
-              </div>
-              <div class="timeline-body">
-                <div class="project-tags">
-                  <span>Python</span><span>NVIDIA Isaac Sim</span><span>3D Bin Packing</span><span>UR20</span><span>좌표 변환</span>[cite: 1]
-                </div>
-                <p>물류센터 상하차 피로도를 줄이기 위해 직접 설계한 3D 가적재 공간 연산 결과를 물리 로봇팔 제어 명령으로 연동하는 프레임워크를 개발했습니다.[cite: 1]</p>
-                <ul>
-                  <li><strong>3D Bin Packing 구현:</strong> 배치 가능 공간 연산, 박스 지지 면적 및 누적 높이를 자동 검증하는 휴리스틱 파이프라인 개발[cite: 1]</li>
-                  <li><strong>정밀 좌표계 매핑:</strong> 추상화된 격자(Grid) 배치 좌표 정보를 로봇팔이 인식할 수 있는 실제 박스 중심 좌표, 접근/배치 높이, Yaw 각도 명령으로 변환하는 변환식 설계[cite: 1]</li>
-                  <li><strong>시뮬레이션 검증:</strong> Isaac Sim 환경에서 UR20 로봇팔의 흡착, 리프트, 배치(attach ➔ lift ➔ place) 동작 스트림 환경을 구축하고 오류 로그 정밀 보정[cite: 1]</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://github.com/dltndud0313/jeokjaejeokso" target="_blank"><i class="fa-brands fa-github"></i> GitHub 저장소 보기</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- IMO -->
-          <div class="timeline-item">
-            <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
-            <div class="timeline-panel">
-              <div class="timeline-heading">
-                <span class="project-duration">2026.04 - 2026.05 (6인 팀)</span>[cite: 1]
-                <h3 class="project-name">IMO (Inside Muscle Out) <span class="status-tag">완료</span></h3>[cite: 1]
-                <p class="project-role">EMG · IMU 센서 기반 실시간 운동 자세 분석 시스템 (Firmware Developer)</p>[cite: 1]
-              </div>
-              <div class="timeline-body">
-                <div class="project-tags">
-                  <span>ESP-IDF</span><span>C / C++</span><span>ESP32</span><span>ADC/I2C</span><span>Binary Protocol</span><span>CRC16</span>[cite: 1]
-                </div>
-                <p>재활 및 홈트레이닝 환경에서 정밀한 자세 보정이 가능하도록 고속 멀티 센서 수집 및 임베디드 통신 아키텍처를 설계했습니다.[cite: 1]</p>
-                <ul>
-                  <li><strong>20ms 수집 펌웨어 파이프라인:</strong> 지연 없는 처리를 위해 하드웨어 타이머 기반의 고성능 다중 센서 수집 구조 설계[cite: 1]</li>
-                  <li><strong>실시간 신호 정제 필터:</strong> 로우 데이터 노이즈 억제를 위해 RMS, Baseline 보정, Noise floor, Smoothing 연산을 하드웨어 레벨에 구현하여 센서 흔들림 제어[cite: 1]</li>
-                  <li><strong>직렬 패킷 최적화:</strong> 통신 부하를 줄이기 위해 64-byte Binary V2 직렬 스트림 규격을 정의하고, CRC16 체크섬 검증 부가로 상위 라즈베리 파이 전송 무결성 100% 확보[cite: 1]</li>
-                </ul>
-                <div class="project-links">
-                  <a href="https://github.com/dltndud0313/ssara" target="_blank"><i class="fa-brands fa-github"></i> GitHub 저장소 보기</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section id="contact" class="content-section">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-subtitle">하드웨어와 소프트웨어를 잇는 안정적인 로봇 제어 시스템을 구축합니다. 언제든 연락해 주세요.</p>
+      <section id="experience" class="content-section">
+        <h2 class="section-title">Experience</h2>
+        <p class="section-subtitle">이전 직무에서의 실무 경험과 문제 해결 역량입니다[cite: 264].</p>
         
-        <div class="contact-grid">
-          <div class="contact-card">
-            <div class="c-icon"><i class="fa-regular fa-envelope"></i></div>
-            <div class="c-text">
-              <h5>Email</h5>
-              <p><a href="mailto:dltndud0313@naver.com">dltndud0313@naver.com</a></p>[cite: 1]
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-badge"><i class="fa-solid fa-briefcase"></i></div>
+            <div class="timeline-panel">
+              <div class="timeline-heading">
+                <span class="project-duration">2023.03 - 2024.04</span>
+                <h3 class="project-name">(주)마초의사춘기</h3>
+                <p class="project-role">연출팀 사원 (플랜테리어 공간 기획 및 현장 시공 관리) [cite: 264]</p>
+              </div>
+              <div class="timeline-body">
+                <ul>
+                  <li><strong>실무 전반 운영:</strong> 비주얼 샘플링, 현장 시공 관리, 일정·자재·인력·물류 통합 운영 프로세스 담당 [cite: 264]</li>
+                  <li><strong>가변적 문제 해결력:</strong> 공간 조건, 일정, 자재 사정 등 수시로 변하는 현장 변수 속에서 실행 가능한 최적의 대안 도출 태도 정립 [cite: 264, 270]</li>
+                  <li><strong>임베디드SW 접점:</strong> 실제 현장 제품 환경에서 직면하는 하드웨어 제약 및 변수들을 구조적으로 대응하는 공학적 태도로 확장 [cite: 264, 296]</li>
+                </ul>
+              </div>
             </div>
           </div>
-          <div class="contact-card">
-            <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
-            <div class="c-text">
-              <h5>Phone</h5>
-              <p>010-4151-1321</p>[cite: 1]
+        </div>
+      </section>
+
+      <section id="projects" class="content-sectionAlt">
+        <div class="content-section">
+          <h2 class="section-title">Projects</h2>
+          <p class="section-subtitle">임베디드 및 로봇 시스템 개발자로서 수행한 주요 프로젝트 타임라인입니다[cite: 273].</p>
+
+          <div class="timeline">
+            
+            <div class="timeline-item">
+              <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="project-duration">2026.04.03 - 2026.05.21 (6인 팀) [cite: 233]</span>
+                  <h3 class="project-name">스마트글래스 기반 운동보조 센서 수집 시스템 (IMO) <span class="status-tag">완료</span> [cite: 232, 233]</h3>
+                  <p class="project-role">역할: ESP32 펌웨어 개발 (센서 수집 · 필터링 · 패킷 전송) [cite: 189, 233]</p>
+                </div>
+                <div class="timeline-body">
+                  <div class="project-tags">
+                    <span>ESP-IDF</span><span>C/C++</span><span>ESP32-S3</span><span>Raspberry Pi</span><span>MPU-6050</span><span>USB Serial</span><span>CRC16</span> [cite: 234]
+                  </div>
+                  <p>재활 및 운동 자세 보정을 위해 고속 멀티 센서를 안정적으로 수집·전송하는 하드웨어 비의존형 임베디드 파이프라인을 구축했습니다[cite: 186, 187, 216].</p>
+                  <ul>
+                    <li><strong>다중 센서 수집 구조:</strong> 하드웨어 타이머 기반으로 EMG 4채널과 IMU 3개를 동시에 저지연(20ms 주기, 50Hz) 수집하는 펌웨어 설계 [cite: 235, 236, 237]</li>
+                    <li><strong>직렬 통신 최적화:</strong> Raspberry Pi 전송 안정화를 위해 BINARY_V2 64바이트 고정 프레임 프로토콜, little-endian 포맷 및 CRC16 체크섬 검증 적용 [cite: 236, 238, 277]</li>
+                    <li><strong>이슈 디버깅:</strong> I2C 주소 및 버스 분리로 IMU 충돌을 해결하고, baseline/noise floor/RMS 필터링 적용으로 EMG 센서 착탈 시의 신호 흔들림 완화 [cite: 239, 280]</li>
+                    <li><strong>검증 아키텍처:</strong> mock sensor, binary decoder, host test 기반의 하드웨어 독립형 테스트 파이프라인 구성 [cite: 240]</li>
+                  </ul>
+                </div>
+              </div>
             </div>
+
+            <div class="timeline-item">
+              <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="project-duration">2026.02.19 - 2026.03.30 (6인 팀) [cite: 148, 150]</span>
+                  <h3 class="project-name">스마트팩토리 디지털 트윈 기반 롤테이너 적재 검증 <span class="status-tag">완료</span> [cite: 253]</h3>
+                  <p class="project-role">역할: 알고리즘 검증 및 로봇 실행 파이프라인 구축 [cite: 149, 254]</p>
+                </div>
+                <div class="timeline-body">
+                  <div class="project-tags">
+                    <span>Python</span><span>NVIDIA Isaac Sim</span><span>3D Bin Packing</span><span>Beam Search</span><span>UR20 Robot Arm</span> [cite: 255]
+                  </div>
+                  <p>물류 상하차 작업 부하 경감을 위해 직접 구현한 3D 가적재 알고리즘 연산 결과를 가상 환경의 실제 로봇팔 구동 명령으로 연동·검증했습니다[cite: 153, 155].</p>
+                  <ul>
+                    <li><strong>실행 계층 분리:</strong> packing, integration, pipeline, robot arm 단계를 명확히 분리하여 디버깅이 용이한 소프트웨어 아키텍처 수립 [cite: 260, 292]</li>
+                    <li><strong>정밀 좌표 변환:</strong> 추상화된 격자(Grid) 기반 적재 알고리즘 결과 좌표를 UR20 로봇팔이 다룰 수 있는 중심 좌표, 접근/배치 높이, Yaw 각도로 정밀 매핑 [cite: 158, 168]</li>
+                    <li><strong>디지털 트윈 검증:</strong> Isaac Sim 환경에서 단일/듀얼암 흐름 분리 및 로봇팔의 흡착, 리프트, 배치(pick, suction, lift, place, release) 스트림을 시뮬레이션하고 물리적 접촉 안정성 로그 검증 [cite: 157, 257, 261]</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
+            <div class="timeline-item">
+              <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
+              <div class="timeline-panel">
+                <div class="timeline-heading">
+                  <span class="project-duration">2026.01.06 - 2026.02.09 (6인 팀) [cite: 111, 112]</span>
+                  <h3 class="project-name">SSARA: Spot Micro 기반 시각장애인 안내 4족 보행 로봇 <span class="status-tag">완료</span> [cite: 111, 243]</h3>
+                  <p class="project-role">역할: 로봇 인지(Perception) 파이프라인 및 시스템 엔지니어링 [cite: 112, 244]</p>
+                </div>
+                <div class="timeline-body">
+                  <div class="project-tags">
+                    <span>ROS2 Humble</span><span>Jetson Orin Nano</span><span>RTAB-Map SLAM</span><span>YOLOv8</span><span>TensorRT FP16</span><span>MQTT</span> [cite: 245]
+                  </div>
+                  <p>제한된 하드웨어 엣지 환경에서 자율주행 안내 로봇을 위한 실시간 3D 매핑 및 인지 파이프라인 최적화를 수행했습니다[cite: 114, 252, 284].</p>
+                  <ul>
+                    <li><strong>Perception 데이터 가공:</strong> RGB 카메라와 Depth 센서 간 시간 동기화를 처리하고, 노이즈가 튀는 외곽 값을 중앙값(median) 필터로 걸러 신뢰도 높은 타겟 객체 거리 추정 구현 [cite: 138, 281]</li>
+                    <li><strong>엣지 리소스 최적화:</strong> SLAM과 객체 인식을 동시 구동 시 발생하는 OOM 문제를 해결하기 위해 TensorRT FP16 가속 엔진 전환, 해상도 축소, 프레임 스킵(skip_rate=5)을 단계적으로 적용하여 GPU 부하 절감 [cite: 249, 286, 287]</li>
+                    <li><strong>아키텍처 개선:</strong> 카메라 데이터에 대한 Race Condition 이슈를 노드 단일화로 개선하고, 기존 HTTP Polling을 고속 MQTT Pub/Sub 구조의 Pose Bridge로 전환하여 실시간 통신 보장 [cite: 247, 250, 288]</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+
           </div>
-          <div class="contact-card">
-            <div class="c-icon"><i class="fa-brands fa-github"></i></div>
-            <div class="c-text">
-              <h5>GitHub</h5>
-              <p><a href="https://github.com/dltndud0313" target="_blank">github.com/dltndud0313</a></p>[cite: 1]
+        </div>
+      </section>
+
+      <section id="education" class="content-section">
+        <h2 class="section-title">Education & Awards</h2>
+        <p class="section-subtitle">학업 역량, 이수 교육 및 대내외 수상 내역입니다[cite: 227, 229].</p>
+        
+        <div class="info-grid">
+          <div class="info-card">
+            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-date">2025.07 - 현재</span>
+                <strong>SSAFY (삼성청년SW아카데미) 14기 이수 중</strong> [cite: 228]
+                <p>Python, 알고리즘, 웹 백엔드 시스템 및 다수의 로봇 인지/임베디드 하드웨어 통합 프로젝트 수행 [cite: 222, 271]</p>
+              </li>
+              <li>
+                <span class="info-date">2017.03 - 2023.02</span>
+                <strong>청주대학교 환경조경학과 졸업</strong> [cite: 228]
+                <p>공간 기획, 도면 설계, 기술 요구사항 구현 관련 하드웨어적 구조 감각 체득 [cite: 269]</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="info-card">
+            <h3><i class="fa-solid fa-award"></i> Awards & Certificates</h3>
+            <ul class="info-list">
+              <li>
+                <span class="info-date">2023.05</span>
+                <strong>조경학과 졸업작품전 (4학년) 최우수상</strong> [cite: 230]
+                <p>청주대학교</p>
+              </li>
+              <li>
+                <span class="info-date">2022.05</span>
+                <strong>조경학과 작품전 (3학년) 최우수상</strong> [cite: 230]
+                <p>청주대학교</p>
+              </li>
+              <li>
+                <span class="info-date">2017.04</span>
+                <strong>1종 보통 운전면허</strong> [cite: 230]
+                <p>경찰청</p>
+              </li>
+              <li>
+                <span class="info-date">2016.07</span>
+                <strong>조경기능사</strong> [cite: 230]
+                <p>한국산업인력공단</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="content-sectionAlt">
+        <div class="content-section">
+          <h2 class="section-title">Contact</h2>
+          <p class="section-subtitle">하드웨어와 소프트웨어를 안정적으로 잇는 엔지니어가 되겠습니다. 언제든 연락해 주세요[cite: 221, 300].</p>
+          
+          <div class="contact-grid">
+            <div class="contact-card">
+              <div class="c-icon"><i class="fa-regular fa-envelope"></i></div>
+              <div class="c-text">
+                <h5>Email</h5>
+                <p><a href="mailto:leesooy0313@gmail.com">leesooy0313@gmail.com</a></p> [cite: 219]
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="c-icon"><i class="fa-solid fa-phone"></i></div>
+              <div class="c-text">
+                <h5>Phone</h5>
+                <p>010-4151-1321</p> [cite: 219]
+              </div>
+            </div>
+            <div class="contact-card">
+              <div class="c-icon"><i class="fa-brands fa-github"></i></div>
+              <div class="c-text">
+                <h5>GitHub</h5>
+                <p><a href="https://github.com/dltndud0313" target="_blank">github.com/dltndud0313</a></p>
+              </div>
             </div>
           </div>
         </div>
@@ -221,11 +307,10 @@
     </main>
   </div>
 
-  <!-- 타이핑 효과 구동용 기본 라이브러리 스크립트 -->
   <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script>
     var typed = new Typed('#typed-text', {
-      strings: ['Embedded SW Developer.', 'Robotics Engineer.', 'Problem Solver.'],
+      strings: ['Embedded SW Developer.', 'Robotics Engineer.', 'Problem Solver.'], [cite: 2]
       typeSpeed: 60,
       backSpeed: 30,
       loop: true
