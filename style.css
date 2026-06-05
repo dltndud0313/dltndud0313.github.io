@@ -27,6 +27,8 @@ ul {
 /* 전체 2단 분할 레이아웃 구조 */
 .layout-wrapper {
   display: flex;
+  width: 100%;
+  min-height: 100vh;
 }
 
 /* ==========================================================================
@@ -34,12 +36,13 @@ ul {
    ========================================================================== */
 .sidebar {
   width: 300px;
+  min-width: 300px; /* 사이드바 너비 고정 */
   background-color: #0b0f19;
   height: 100vh;
   position: sticky;
   top: 0;
   border-right: 1px solid rgba(255, 255, 255, 0.05);
-  padding: 2.5rem 2rem;
+  padding: 2.5rem 1.5rem;
   z-index: 10;
 }
 
@@ -49,6 +52,7 @@ ul {
   height: 100%;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
 .profile-avatar {
@@ -67,25 +71,25 @@ ul {
   object-fit: cover;
 }
 
-/* 이름 영역 컨테이너 및 국/영문 스타일 */
+/* 이름 영역 컨테이너 및 국/영문 가로 정렬 */
 .profile-name-wrap {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
   text-align: center;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.5rem;
 }
 
 .profile-name {
-  font-size: 1.6rem;
+  font-size: 1.45rem;
   font-weight: 700;
   color: #f1f5f9;
-  margin-bottom: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 0.4rem;
 }
 
 .profile-name-eng {
-  display: block;
   font-size: 0.95rem;
   color: #64748b;
   font-weight: 500;
@@ -99,6 +103,7 @@ ul {
   font-weight: 500;
   margin-bottom: 2rem;
   height: 20px;
+  text-align: center;
 }
 
 .sidebar-nav {
@@ -141,35 +146,38 @@ ul {
 /* ==========================================================================
    RIGHT CONTENT (스크롤 컨텐츠 패널)
    ========================================================================== */
+/* 전체 본문 영역을 수평 정렬하기 위해 flex 컨테이너로 설정 */
 .main-content {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 전체 섹션 블록들을 화면 중앙으로 정렬 */
+  align-items: center; /* 전체 섹션 블록들을 화면 가로 기준 정중앙 배치 */
 }
 
+/* 본문 내용을 품고 있는 내부 실제 컨테이너 정렬 */
 .content-section {
-  padding: 5.5rem 4rem;
+  padding: 5.5rem 2rem;
   width: 100%;
-  max-width: 1000px; /* 본문이 너무 퍼지지 않도록 최대 너비 최적화 */
+  max-width: 900px; /* 가독성을 위한 최적화된 본문 가로 폭 제한 */
   display: flex;
   flex-direction: column;
-  align-items: center; /* 내부 요소들을 가로축 기준 가운데 정렬 */
+  align-items: center; /* 내부의 제목, 소제목 등을 가운데 정렬 */
 }
 
+/* 배경 색상이 끝까지 차야 하므로 부모 영역은 가로 100%를 유지하고 내부 요소를 정렬 */
 .content-sectionAlt {
   background-color: #070b14;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   width: 100%;
   display: flex;
-  justify-content: center; /* 배경이 100% 채워진 상태에서 내부 content-section을 가운데로 정렬 */
+  justify-content: center; /* 내부의 content-section을 수평 기준 중앙 배치 */
 }
 
-/* Alt 구역 내부의 실제 중첩 배치 구조 수정 */
+/* 배경 구역 내부에 직접 중첩 배치되는 구조 공백 최적화 */
 .content-sectionAlt > .content-section {
-  padding: 5.5rem 4rem;
+  padding: 5.5rem 2rem;
 }
 
 .section-title {
@@ -179,10 +187,10 @@ ul {
   position: relative;
   padding-bottom: 0.8rem;
   margin-bottom: 1.5rem;
-  text-align: center; /* 타이틀 텍스트 중앙 정렬 */
+  text-align: center;
 }
 
-/* 밑줄 장식선이 글자 중앙에 위치하도록 수정 */
+/* 밑줄 장식선 중앙 정렬 */
 .section-title::after {
   content: '';
   position: absolute;
@@ -199,14 +207,14 @@ ul {
   color: #64748b;
   font-size: 1.05rem;
   margin-bottom: 2.5rem;
-  text-align: center; /* 서브타이틀 텍스트 중앙 정렬 */
+  text-align: center;
 }
 
 /* About Highlights Grid */
 .about-hero {
   margin-bottom: 3rem;
-  text-align: center; /* 자기소개 글 가운데 정렬 */
-  max-width: 850px;
+  text-align: center;
+  width: 100%;
 }
 
 .lead-text {
@@ -215,8 +223,7 @@ ul {
   color: #f8fafc;
   line-height: 1.5;
   margin-bottom: 1.2rem;
-  border-left: none; /* 기존 왼쪽 세로선 제거 */
-  border-bottom: 2px solid #14b8a6; /* 강조를 아래 가로선으로 변경하여 중앙 배치 연출 */
+  border-bottom: 2px solid #14b8a6; /* 세로선 대신 하단 가로선으로 중앙 느낌 강조 */
   padding-bottom: 0.8rem;
   display: inline-block;
 }
@@ -234,7 +241,7 @@ ul {
   border: 1px solid rgba(255,255,255,0.03);
   padding: 1.8rem 1.5rem;
   border-radius: 12px;
-  text-align: center; /* 핵심 역량 카드 내부 내용 중앙 정렬 */
+  text-align: center;
 }
 
 .icon-wrap {
@@ -269,7 +276,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 1.8rem;
-  text-align: left; /* 긴 스킬 설명 구조는 가독성을 위해 좌측 유지 */
+  text-align: left;
 }
 
 .skill-box h3 {
@@ -315,7 +322,6 @@ ul {
   position: relative;
   padding: 1rem 0;
   width: 100%;
-  max-width: 850px; /* 타임라인이 너무 벌어지지 않도록 최적화 */
 }
 
 .timeline::before {
@@ -331,6 +337,7 @@ ul {
 .timeline-item {
   position: relative;
   margin-bottom: 3rem;
+  width: 100%;
 }
 
 .timeline-badge {
@@ -348,7 +355,6 @@ ul {
   justify-content: center;
 }
 
-/* 반전 구역용 패드 색상 처리 */
 .content-sectionAlt .timeline-badge {
   background-color: #070b14;
 }
@@ -360,7 +366,7 @@ ul {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-  text-align: left; /* 다량의 상세 텍스트를 담은 패널은 가독성을 위해 좌측 정렬 */
+  text-align: left;
 }
 
 .project-duration {
@@ -577,7 +583,7 @@ ul {
   }
   
   .main-content {
-    align-items: stretch; /* 모바일에서는 가득 차도록 변경 */
+    align-items: stretch;
   }
 
   .content-section,
