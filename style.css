@@ -36,7 +36,7 @@ ul {
    ========================================================================== */
 .sidebar {
   width: 300px;
-  min-width: 300px; /* 사이드바 너비 고정 */
+  min-width: 300px; /* 사이드바 크기가 찌그러지지 않도록 확실히 고정 */
   background-color: #0b0f19;
   height: 100vh;
   position: sticky;
@@ -71,7 +71,7 @@ ul {
   object-fit: cover;
 }
 
-/* 이름 영역 컨테이너 및 국/영문 가로 정렬 */
+/* 이름 영역 컨테이너 및 국/영문 완벽한 중앙 배치 */
 .profile-name-wrap {
   width: 100%;
   text-align: center;
@@ -146,38 +146,42 @@ ul {
 /* ==========================================================================
    RIGHT CONTENT (스크롤 컨텐츠 패널)
    ========================================================================== */
-/* 전체 본문 영역을 수평 정렬하기 위해 flex 컨테이너로 설정 */
+/* 우측 본문 스크롤 영역 전체 */
 .main-content {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center; /* 전체 섹션 블록들을 화면 가로 기준 정중앙 배치 */
+  align-items: center;       /* 자식 요소인 각 섹션 블록들을 화면 가로 기준 정중앙으로 배치 */
+  width: 100%;
 }
 
-/* 본문 내용을 품고 있는 내부 실제 컨테이너 정렬 */
+/* 본문 내용을 직접 감싸는 기본 컨테이너 */
 .content-section {
   padding: 5.5rem 2rem;
   width: 100%;
-  max-width: 900px; /* 가독성을 위한 최적화된 본문 가로 폭 제한 */
+  max-width: 900px;          /* 본문 폭이 무한정 늘어나 가독성이 깨지지 않도록 정밀 제어 */
+  margin: 0 auto;            /* 좌우 마진을 자동으로 배분해 확실하게 중앙 고정 */
   display: flex;
   flex-direction: column;
-  align-items: center; /* 내부의 제목, 소제목 등을 가운데 정렬 */
+  align-items: center;       /* 내부의 제목, 한줄 요약글 등을 가운데 정렬 */
 }
 
-/* 배경 색상이 끝까지 차야 하므로 부모 영역은 가로 100%를 유지하고 내부 요소를 정렬 */
+/* 배경 구역 (전체 폭을 채우며 내부에 content-section을 수평 중앙 정렬) */
 .content-sectionAlt {
   background-color: #070b14;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   width: 100%;
   display: flex;
-  justify-content: center; /* 내부의 content-section을 수평 기준 중앙 배치 */
+  justify-content: center;   /* 부모 가로폭이 100%일 때 내부 자식이 정확히 가운데 오도록 정렬 */
+  align-items: center;
 }
 
-/* 배경 구역 내부에 직접 중첩 배치되는 구조 공백 최적화 */
+/* Alt 구역 바로 아래에 붙은 실제 섹션 박스의 패딩 및 여백 고정 */
 .content-sectionAlt > .content-section {
   padding: 5.5rem 2rem;
+  margin: 0 auto;
 }
 
 .section-title {
@@ -190,7 +194,7 @@ ul {
   text-align: center;
 }
 
-/* 밑줄 장식선 중앙 정렬 */
+/* 제목 밑줄 장식선 정중앙 배치 보정 */
 .section-title::after {
   content: '';
   position: absolute;
@@ -223,7 +227,7 @@ ul {
   color: #f8fafc;
   line-height: 1.5;
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid #14b8a6; /* 세로선 대신 하단 가로선으로 중앙 느낌 강조 */
+  border-bottom: 2px solid #14b8a6; /* 미관상 왼쪽 세로선 대신 하단 중앙선으로 레이아웃 흐름 일치 */
   padding-bottom: 0.8rem;
   display: inline-block;
 }
@@ -263,7 +267,7 @@ ul {
   line-height: 1.6;
 }
 
-/* Skills Layout (배지 적용) */
+/* Skills Layout */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -276,7 +280,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 1.8rem;
-  text-align: left;
+  text-align: left; /* 카드 내부의 텍스트 리스트는 가독성을 유지하기 위해 좌측 정렬 */
 }
 
 .skill-box h3 {
