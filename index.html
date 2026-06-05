@@ -11,6 +11,7 @@
 
   <div class="layout-wrapper">
     
+    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-sticky">
             <div class="profile-avatar">
@@ -38,8 +39,10 @@
         </div>
     </aside>
 
+    <!-- MAIN CONTENT -->
     <main class="main-content">
 
+      <!-- 1. ABOUT SECTION -->
       <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
         <div class="about-hero">
@@ -70,29 +73,47 @@
         </div>
       </section>
 
+      <!-- 2. INTEGRATED HISTORY SECTION (SSAFY 추가 및 마초의사춘기 내용 가독성 개선) -->
       <section id="experience" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Experience & Education</h2>
-          <p class="section-subtitle">공간 기획부터 현장 총괄까지, 문제를 주도적으로 해결해 온 발자취입니다.</p>
+          <p class="section-subtitle">공간 기획부터 최신 SW/로봇 역량 확보까지, 끈기 있게 이어온 성장 여정입니다.</p>
           
           <div class="info-grid">
+            <!-- 왼쪽 카드: 경력 및 교육/학력 타임라인 -->
             <div class="info-card">
-              <h3><i class="fa-solid fa-history"></i> Career & Degree</h3>
+              <h3><i class="fa-solid fa-history"></i> Experience & Education</h3>
               <ul class="info-list">
+                <!-- SSAFY 이력 추가 -->
+                <li>
+                  <span class="info-date">2025.07 - 현재</span>
+                  <strong>삼성청년SW아카데미 (SSAFY)</strong>
+                  <p class="info-role">임베디드 트랙 수료 중</p>
+                  <p class="info-desc">C/C++, 알고리즘, 리눅스 커널 및 임베디드 아키텍처 학습. 다양한 실전 프로젝트를 통해 ROS2 기반 로봇 제어 및 IoT 파이프라인 최적화 역량 집중 확보.</p>
+                </li>
+                <!-- 마초의사춘기 서식 깔끔하게 리팩토링 -->
                 <li>
                   <span class="info-date">2023.03 - 2024.04</span>
                   <strong>(주)마초의사춘기</strong>
-                  <p class="info-role">연출팀 사원 (플랜테리어 공간 기획 및 현장 시공 관리)</p>
-                  <p class="info-desc">클라이언트 요구사항 분석 및 무드 도출, 시각화 시안 구체화 및 샘플 연출, 조화·오브제 배치 VMD 총괄, 현장 투입 인력 및 시공 자재 물류 프로세스 운영.</p>
+                  <p class="info-role">연출팀 사원 (공간 기획 및 현장 시공 총괄)</p>
+                  <div class="career-detail-box">
+                    <span class="detail-tag">공간 기획 & VMD</span>
+                    <p class="info-desc">클라이언트 요구사항 분석을 통한 맞춤형 무드 도출, 시각화 시안 구체화 및 조화·오브제 배치 공간 연출 총괄 (스타필드, 킨텍스 모터쇼 등 주요 사이트 수행)</p>
+                    
+                    <span class="detail-tag">프로세스 운영</span>
+                    <p class="info-desc">현장 투입 인력 관리 및 시공 자재 물류 프로세스 리드, 현장 가변 문제 해결력 및 다학제간 협업 소통 역량 증명</p>
+                  </div>
                 </li>
                 <li>
                   <span class="info-date">2017.03 - 2023.02</span>
-                  <strong>청주대학교 환경조경학과 졸업</strong>
-                  <p class="info-desc">공간 기획, 도면 설계, 기술 요구사항 구현을 경험하며 하드웨어적 구조 감각과 설계 파이프라인의 기초를 체득.</p>
+                  <strong>청주대학교 환경조경학과</strong>
+                  <p class="info-role">학사 졸업</p>
+                  <p class="info-desc">공간 기획, 도면 설계, 기술 요구사항 구현을 경험하며 하드웨어적 구조 감각과 전체 설계 파이프라인의 기초 체득.</p>
                 </li>
               </ul>
             </div>
 
+            <!-- 오른쪽 카드: 수상 및 자격증 -->
             <div class="info-card">
               <h3><i class="fa-solid fa-award"></i> Awards & Certificates</h3>
               <ul class="info-list">
@@ -122,6 +143,7 @@
         </div>
       </section>
 
+      <!-- 3. SKILLS SECTION -->
       <section id="skills" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Skills</h2>
@@ -174,12 +196,14 @@
         </div>
       </section>
 
+      <!-- 4. PROJECTS SECTION -->
       <section id="projects" class="content-section">
         <h2 class="section-title">Projects</h2>
         <p class="section-subtitle">수행한 주요 프로젝트 상세 내용입니다.</p>
 
         <div class="timeline">
           
+          <!-- IMO Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -194,7 +218,7 @@
                 </div>
                 <p>재활 및 운동 자세 보정을 위해 고속 멀티 센서를 안정적으로 수집·전송하는 하드웨어 비의존형 임베디드 파이프라인을 구축했습니다.</p>
                 <ul>
-                  <li><strong>다중 센서 수집 구조:</strong> 하드웨어 타이머 기반으로 EMG 4채널과 IMU 3개를 동시에 저지연(20ms 주기, 50Hz) 수집하는 펌웨어 설계</li>
+                  <li><strong>다중 센서 수집 구조:</strong> 하드웨어 타이머 기반으로 EMG 4채널 및 IMU 3개를 동시에 저지연(20ms 주기, 50Hz) 수집하는 펌웨어 설계</li>
                   <li><strong>직렬 통신 최적화:</strong> Raspberry Pi 전송 안정화를 위해 BINARY_V2 64바이트 고정 프레임 프로토콜, little-endian 포맷 및 CRC16 체크섬 검증 적용</li>
                   <li><strong>이슈 디버깅:</strong> I2C 주소 및 버스 분리로 IMU 충돌을 해결하고, baseline/noise floor/RMS 필터링 적용으로 EMG 센서 착탈 시의 신호 흔들림 완화</li>
                   <li><strong>검증 아키텍처:</strong> mock sensor, binary decoder, host test 기반의 하드웨어 독립형 테스트 파이프라인 구성</li>
@@ -203,6 +227,7 @@
             </div>
           </div>
 
+          <!-- 적재적소 Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -225,6 +250,7 @@
             </div>
           </div>
 
+          <!-- SSARA Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -250,6 +276,7 @@
         </div>
       </section>
 
+      <!-- 5. CONTACT SECTION -->
       <section id="contact" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Contact</h2>

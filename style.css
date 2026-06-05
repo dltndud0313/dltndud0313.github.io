@@ -71,7 +71,6 @@ ul {
   object-fit: cover;
 }
 
-/* 이름 영역 컨테이너 및 국/영문 완벽한 중앙 배치 */
 .profile-name-wrap {
   width: 100%;
   text-align: center;
@@ -146,35 +145,32 @@ ul {
 /* ==========================================================================
    RIGHT CONTENT (스크롤 컨텐츠 패널)
    ========================================================================== */
-/* 우측 본문 영역 전체 정렬 통제 */
 .main-content {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* 자식 섹션 박스들을 화면 기준 항상 수평 중앙에 둠 */
+  align-items: center;
   width: 100%;
 }
 
-/* 본문 알맹이를 품는 핵심 컨테이너 */
 .content-section {
   padding: 5.5rem 2rem;
   width: 100%;
-  max-width: 900px;          /* 본문 정렬이 과도하게 벌어지지 않도록 고정 */
-  margin: 0 auto;            /* 남는 여백을 좌우 균등 배분하여 물리적 중앙 배치 보장 */
+  max-width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* 내부 텍스트 및 그리드 구조를 가운데 정렬 */
+  align-items: center;
 }
 
-/* 배경 색상이 끝까지 채워지는 섹션 (교차 연출 구역) */
 .content-sectionAlt {
   background-color: #070b14;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   width: 100%;
   display: flex;
-  justify-content: center;   /* 내부에 박스를 정중앙으로 유도 */
+  justify-content: center;
   align-items: center;
 }
 
@@ -193,7 +189,6 @@ ul {
   text-align: center;
 }
 
-/* 데코레이션 하단 바 정중앙 배치 */
 .section-title::after {
   content: '';
   position: absolute;
@@ -266,7 +261,7 @@ ul {
   line-height: 1.6;
 }
 
-/* Skills Layout (좌측 정렬 가독성 유지) */
+/* Skills Layout */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -319,7 +314,7 @@ ul {
 }
 
 /* ==========================================================================
-   TIMELINE (경력 및 프로젝트 타임라인)
+   TIMELINE (프로젝트 타임라인)
    ========================================================================== */
 .timeline {
   position: relative;
@@ -442,12 +437,8 @@ ul {
   line-height: 1.6;
 }
 
-.timeline-body li strong {
-  color: #e2e8f0;
-}
-
 /* ==========================================================================
-   INTEGRATED INFO GRID (통합 이력 카드 구조)
+   INTEGRATED INFO GRID (경력 및 학력 통합 서식 수정)
    ========================================================================== */
 .info-grid {
   display: grid;
@@ -521,6 +512,27 @@ ul {
   line-height: 1.6;
 }
 
+/* 마초의사춘기 상세 항목 세부 컴포넌트 추가 스타일 */
+.career-detail-box {
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 6px;
+  padding: 0.8rem;
+  margin-top: 0.6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.detail-tag {
+  font-size: 0.75rem;
+  color: #14b8a6;
+  background-color: rgba(20, 184, 166, 0.08);
+  padding: 0.1rem 0.4rem;
+  border-radius: 4px;
+  font-weight: 600;
+  align-self: flex-start;
+}
+
 /* Contact Cards Design */
 .contact-grid {
   display: grid;
@@ -561,7 +573,7 @@ ul {
 }
 
 /* ==========================================================================
-   RESPONSIVE (모바일 스크린 예외 처리)
+   RESPONSIVE (모바일 대응)
    ========================================================================== */
 @media (max-width: 992px) {
   .layout-wrapper {
