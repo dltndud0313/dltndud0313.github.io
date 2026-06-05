@@ -17,8 +17,10 @@
             <div class="profile-avatar">
               <img src="profile.jpg" alt="이수영 프로필 사진" onerror="this.src='https://placehold.co/150x150/0f1322/a9b6cc?text=SUYOUNG';">
             </div>
+            <!-- 이름 배치 수정: 한글 이름 아래로 영어 이름 정렬 -->
             <div class="profile-name-wrap">
-                <h1 class="profile-name">이수영 <span class="profile-name-eng">(Lee Soo-young)</span></h1>
+                <h1 class="profile-name">이수영</h1>
+                <div class="profile-name-eng">Lee Soo-young</div>
             </div>
             <div class="profile-typing">
               I'm a <span id="typed-text"></span>
@@ -80,7 +82,6 @@
           <p class="section-subtitle">탄탄한 풀스택 기본기부터 최신 SW/AIoT 역량 확보까지 끊임없이 성장해 왔습니다.</p>
           
           <div class="info-grid">
-            <!-- 왼쪽 카드: 경력 및 교육/학력 타임라인 -->
             <div class="info-card">
               <h3><i class="fa-solid fa-history"></i> Experience & Education</h3>
               <ul class="info-list">
@@ -111,7 +112,6 @@
               </ul>
             </div>
 
-            <!-- 오른쪽 카드: 수상 및 자격증 -->
             <div class="info-card">
               <h3><i class="fa-solid fa-award"></i> Awards & Certificates</h3>
               <ul class="info-list">
@@ -207,7 +207,7 @@
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <span class="project-duration">2026.04.03 - 2026.05.21 (6인 팀)</span>
-                <h3 class="project-name">스마트글래스 기반 운동보조 센서 수집 시스템 (IMO) <span class="status-tag">완료</span></h3>
+                <h3 class="project-name">IMO: 스마트글래스 기반 운동보조 센서 수집 시스템<span class="status-tag">완료</span></h3>
                 <p class="project-role">역할: ESP32 펌웨어 개발 (센서 수집 · 필터링 · 패킷 전송)</p>
               </div>
               <div class="timeline-body">
@@ -231,7 +231,7 @@
             <div class="timeline-panel">
               <div class="timeline-heading">
                 <span class="project-duration">2026.02.19 - 2026.03.30 (6인 팀)</span>
-                <h3 class="project-name">스마트팩토리 디지털 트윈 기반 롤테이너 적재 검증 <span class="status-tag">완료</span></h3>
+                <h3 class="project-name">적재적소: 스마트팩토리 디지털 트윈 기반 롤테이너 적재 검증 <span class="status-tag">완료</span></h3>
                 <p class="project-role">역할: 알고리즘 검증 및 로봇 실행 파이프라인 구축</p>
               </div>
               <div class="timeline-body">
@@ -265,7 +265,7 @@
                 <ul>
                   <li><strong>Perception 데이터 가공:</strong> RGB 카메라와 Depth 센서 간 시간 동기화를 처리하고, 노이즈가 튀는 외곽 값을 중앙값(median) 필터로 걸러 신뢰도 높은 타겟 객체 거리 추정 구현</li>
                   <li><strong>엣지 리소스 최적화:</strong> SLAM과 객체 인식을 동시 구동 시 발생하는 OOM 문제를 해결하기 위해 TensorRT FP16 가속 엔진 전환, 해상도 축소, 프레임 스킵(skip_rate=5)을 단계적으로 적용하여 GPU 부하 절감</li>
-                  <li><strong>아키텍처 개선:</strong> 카메라 데이터에 대한 Race Condition 이슈를 노드 단일화로 개선하고, 기존 HTTP Polling을 고속 MQTT Pub/Sub 구조의 Pose Bridge로 전환하여 실시간 통신 보장</li>
+                  <li><strong>아키텍처 개선:</strong> 카메라 데이터에 대한 Race Condition 이슈를 노드 단일화로 개선하고, 기존 HTTP Polling을 고속 MQTT Pub/Sub 구조 of Pose Bridge로 전환하여 실시간 통신 보장</li>
                 </ul>
               </div>
             </div>
