@@ -1,512 +1,482 @@
-@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;600&family=Inter:wght@400;600;800&family=Noto+Sans+KR:wght@400;700;900&display=swap');
-
-:root {
-  font-family: 'Inter', 'Noto Sans KR', sans-serif;
-  background: #070913;
-  color: #e2e8f0;
-  font-size: 16px;
-  line-height: 1.65;
-  color-scheme: dark;
-}
+@import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Poppins:wght@300;400;600;700&family=Noto+Sans+KR:wght@300;400;700&display=swap');
 
 * {
   box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  background: radial-gradient(circle at 10% 15%, rgba(99, 102, 241, 0.12), transparent 40%),
-              radial-gradient(circle at 85% 85%, rgba(20, 184, 166, 0.06), transparent 40%),
-              #070913;
+  font-family: 'Poppins', 'Noto Sans KR', sans-serif;
+  background-color: #04060a;
+  color: #a9b6cc;
+  line-height: 1.7;
 }
 
 a {
-  color: inherit;
+  color: #6366f1;
   text-decoration: none;
+  transition: color 0.2s;
+}
+a:hover {
+  color: #4f46e5;
 }
 
-.container {
-  width: min(1200px, calc(100% - 2.5rem));
-  margin: 0 auto;
+ul {
+  list-style: none;
 }
 
-/* TOPBAR */
-.topbar {
+/* 전체 2단 분할 레이아웃 구조 */
+.layout-wrapper {
+  display: flex;
+}
+
+/* ==========================================================================
+   LEFT SIDEBAR (고정 영역)
+   ========================================================================== */
+.sidebar {
+  width: 300px;
+  background-color: #0b0f19;
+  height: 100vh;
   position: sticky;
   top: 0;
-  z-index: 100;
-  background: rgba(7, 9, 19, 0.85);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 2.5rem 2rem;
+  z-index: 10;
 }
 
-.topbar-inner {
+.sidebar-sticky {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  height: 100%;
   justify-content: space-between;
-  padding: 1.1rem 0;
-}
-
-.brand {
-  font-weight: 900;
-  letter-spacing: 0.12em;
-  color: #818cf8;
-  font-size: 1.05rem;
-}
-
-.nav-links {
-  display: flex;
-  gap: 1.8rem;
-}
-
-.nav-links a {
-  color: #94a3b8;
-  font-weight: 600;
-  font-size: 0.95rem;
-  transition: color 0.2s, transform 0.2s;
-}
-
-.nav-links a:hover {
-  color: #6366f1;
-  transform: translateY(-1px);
-}
-
-/* HERO SECTION */
-.hero {
-  display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
-  align-items: center;
-  gap: 4rem;
-  min-height: calc(100vh - 70px);
-  padding: 4rem 0;
-}
-
-.eyebrow {
-  margin: 0;
-  color: #14b8a6;
-  text-transform: uppercase;
-  letter-spacing: 0.2em;
-  font-weight: 700;
-  font-size: 0.85rem;
-  font-family: 'Fira Code', monospace;
-}
-
-.hero-copy h1 {
-  margin: 0.6rem 0 1.2rem;
-  font-size: clamp(2.5rem, 4.5vw, 4rem);
-  font-weight: 900;
-  line-height: 1.15;
-  color: #f8fafc;
-}
-
-.hero-copy span {
-  color: #6366f1;
-  position: relative;
-}
-
-.hero-desc {
-  color: #94a3b8;
-  font-size: 1.1rem;
-  max-width: 38rem;
-}
-
-.hero-actions {
-  display: flex;
-  gap: 1rem;
-  margin-top: 2.5rem;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  padding: 0.9rem 2rem;
-  font-weight: 700;
-  transition: all 0.2s ease;
-}
-
-.button:hover {
-  transform: translateY(-2px);
-}
-
-.primary {
-  background: #6366f1;
-  color: #ffffff;
-  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.3);
-}
-
-.primary:hover {
-  background: #4f46e5;
-  box-shadow: 0 12px 30px rgba(99, 102, 241, 0.45);
-}
-
-.secondary {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  background: rgba(255, 255, 255, 0.03);
-}
-
-.secondary:hover {
-  background: rgba(255, 255, 255, 0.08);
-}
-
-/* PROFILE IMAGE ZONE */
-.hero-image-zone {
-  display: flex;
-  justify-content: center;
   align-items: center;
 }
 
-.profile-hex-wrap {
-  width: 280px;
-  height: 280px;
-  border-radius: 24%;
-  background: #111424;
-  border: 2px solid rgba(99, 102, 241, 0.4);
-  box-shadow: 0 30px 60px rgba(0,0,0,0.4);
+.profile-avatar {
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
   overflow: hidden;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  border: 4px solid #1a233a;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  margin-bottom: 1rem;
 }
 
-.profile-img {
+.profile-avatar img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(20%) contrast(105%);
 }
 
-.profile-fallback-text {
-  font-family: 'Fira Code', monospace;
-  font-size: 3rem;
-  color: #334155;
-  position: absolute;
-  z-index: -1;
-}
-
-/* GENERAL SECTIONS */
-.section {
-  padding: 6rem 0;
-}
-
-.section-alt {
-  background: #0b0e1a;
-  border-top: 1px solid rgba(255, 255, 255, 0.03);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-}
-
-.section-header {
-  margin-bottom: 3.5rem;
-}
-
-.section-header h2, .section h2 {
-  font-size: clamp(2rem, 3vw, 2.5rem);
-  font-weight: 800;
-  margin: 0 0 0.6rem;
-  color: #f1f5f9;
-}
-
-.section-header p {
-  color: #64748b;
-  margin: 0;
-  font-size: 1.05rem;
-}
-
-.section-grid {
-  display: grid;
-  grid-template-columns: 1.1fr 0.9fr;
-  gap: 3.5rem;
-  align-items: start;
-}
-
-.about-quote {
-  border-left: 4px solid #14b8a6;
-  padding-left: 1.5rem;
-  margin: 2rem 0;
-}
-
-.about-quote p {
-  font-size: 1.3rem;
+.profile-name {
+  font-size: 1.6rem;
   font-weight: 700;
-  color: #f8fafc;
-  margin: 0;
+  color: #f1f5f9;
+  margin-bottom: 0.4rem;
 }
 
-.card {
-  background: #111424;
-  border: 1px solid rgba(255, 255, 255, 0.05);
-  border-radius: 20px;
-  padding: 2.2rem;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
-}
-
-.spec-card h3 {
-  margin-top: 0;
-  font-size: 1.2rem;
+.profile-typing {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
   color: #14b8a6;
-  border-bottom: 1px solid rgba(255,255,255,0.06);
-  padding-bottom: 0.8rem;
+  font-weight: 500;
+  margin-bottom: 2.5rem;
+  height: 20px;
 }
 
-.spec-card ul {
-  padding-left: 1rem;
-  margin: 1.2rem 0 0;
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: 0.5rem;
 }
 
-.spec-card li {
-  margin-bottom: 1rem;
+.sidebar-nav a {
+  color: #94a3b8;
+  padding: 0.8rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 600;
   font-size: 0.95rem;
-  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  transition: all 0.2s;
 }
 
-/* SKILLS DASHBOARD (고도화됨) */
-.skills-dashboard {
+.sidebar-nav a i {
+  font-size: 1.1rem;
+  width: 20px;
+}
+
+.sidebar-nav a:hover {
+  background-color: rgba(99, 102, 241, 0.1);
+  color: #818cf8;
+  padding-left: 1.5rem;
+}
+
+.sidebar-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  color: #475569;
+  line-height: 1.5;
+}
+
+/* ==========================================================================
+   RIGHT CONTENT (스크롤 영역)
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  min-width: 0; /* flex 자식 요소 너비 터짐 방지 */
+}
+
+.content-section {
+  padding: 5.5rem 4rem;
+  max-width: 900px;
+}
+
+.content-sectionAlt {
+  background-color: #070b14;
+  border-top: 1px solid rgba(255, 255, 255, 0.02);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+
+.section-title {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  position: relative;
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.section-title::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 50px;
+  height: 4px;
+  background-color: #6366f1;
+  border-radius: 2px;
+}
+
+.section-subtitle {
+  color: #64748b;
+  font-size: 1.05rem;
+  margin-bottom: 2.5rem;
+}
+
+/* About Section 특화 */
+.about-hero {
+  margin-bottom: 3rem;
+}
+
+.lead-text {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: #f8fafc;
+  line-height: 1.5;
+  margin-bottom: 1.2rem;
+  border-left: 3px solid #14b8a6;
+  padding-left: 1rem;
+}
+
+.about-highlights {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3.5rem;
+}
+
+.highlight-item {
+  background: #0f1322;
+  border: 1px solid rgba(255,255,255,0.03);
+  padding: 1.8rem 1.5rem;
+  border-radius: 12px;
+}
+
+.icon-wrap {
+  font-size: 1.8rem;
+  color: #6366f1;
+  margin-bottom: 1rem;
+}
+
+.highlight-item h4 {
+  color: #f1f5f9;
+  font-size: 1.05rem;
+  margin-bottom: 0.6rem;
+  font-weight: 700;
+}
+
+.highlight-item p {
+  font-size: 0.88rem;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+/* Skills Section 특화 */
+.skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
 }
 
-.skill-category-card {
-  background: #0f1222;
-  border: 1px solid rgba(255,255,255,0.04);
+.skill-box {
+  background-color: #0f1322;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
   padding: 1.8rem;
-  border-radius: 16px;
-  box-shadow: inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
-.category-title {
-  font-family: 'Fira Code', monospace;
-  font-weight: 700;
+.skill-box h3 {
   font-size: 1.1rem;
-  color: #f8fafc;
-}
-
-.category-subtitle {
-  font-size: 0.85rem;
-  color: #64748b;
-  margin: 0.2rem 0 1.2rem;
-}
-
-.tags {
+  color: #f1f5f9;
+  margin-bottom: 0.8rem;
   display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
+  align-items: center;
+  gap: 0.6rem;
 }
 
-.tag {
-  background: rgba(255,255,255,0.03);
-  border: 1px solid rgba(255,255,255,0.08);
-  padding: 0.4rem 0.8rem;
-  border-radius: 8px;
-  font-size: 0.85rem;
+.skill-box h3 i {
+  color: #14b8a6;
+  font-size: 1rem;
+}
+
+.skill-box p {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.88rem;
   color: #94a3b8;
+  word-break: keep-all;
+}
+
+/* ==========================================================================
+   TIMELINE PROJECTS (예시 주소 핵심 스타일)
+   ========================================================================== */
+.timeline {
+  position: relative;
+  padding: 1rem 0;
+}
+
+/* 중앙 수직축 선 제거하고 왼쪽에 배치하는 구조 */
+.timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 20px;
+  width: 2px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 3rem;
+}
+
+.timeline-badge {
+  position: absolute;
+  top: 5px;
+  left: 11px;
+  z-index: 2;
+  color: #6366f1;
+  background-color: #04060a;
+  font-size: 1.2rem;
+  width: 20px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.timeline-panel {
+  margin-left: 55px;
+  background: #0f1322;
+  border: 1px solid rgba(255, 255, 255, 0.04);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+}
+
+.project-duration {
+  font-family: 'Fira Code', monospace;
+  font-size: 0.8rem;
+  color: #14b8a6;
+  display: block;
+  margin-bottom: 0.3rem;
+  font-weight: 500;
+}
+
+.project-name {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #f1f5f9;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.status-tag {
+  font-size: 0.72rem;
+  background-color: rgba(20, 184, 166, 0.1);
+  color: #14b8a6;
+  padding: 0.1rem 0.5rem;
+  border-radius: 4px;
   font-weight: 600;
 }
 
-.tag.checked {
-  border-color: rgba(99, 102, 241, 0.3);
-  background: rgba(99, 102, 241, 0.08);
-  color: #a5b4fc;
-}
-
-/* PROJECTS (Accordion UI 가독성 고도화) */
-.project-grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
-}
-
-.project-card {
-  background: #111424;
-  border: 1px solid rgba(255,255,255,0.05);
-  border-radius: 16px;
-  padding: 1.5rem 2rem;
-  transition: border-color 0.2s;
-}
-
-.project-card:hover {
-  border-color: rgba(99, 102, 241, 0.3);
-}
-
-.project-card summary {
-  list-style: none;
-  cursor: pointer;
-}
-
-.project-card summary::-webkit-details-marker {
-  display: none;
-}
-
-.project-card-summary {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 2rem;
-}
-
-.project-date {
-  font-family: 'Fira Code', monospace;
-  font-size: 0.85rem;
+.project-role {
+  font-size: 0.9rem;
   color: #64748b;
-  min-width: 150px;
+  margin-top: 0.2rem;
+  margin-bottom: 1.2rem;
+  font-weight: 600;
 }
 
-.project-card h3 {
-  margin: 0;
-  font-size: 1.4rem;
-  font-weight: 800;
-  color: #f8fafc;
-}
-
-.project-badge {
-  margin: 0;
-  color: #94a3b8;
-  font-size: 0.95rem;
-  text-align: right;
-}
-
-.project-card details[open] summary h3 {
-  color: #6366f1;
-}
-
-.project-detail {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid rgba(255,255,255,0.06);
-}
-
-.tech-stack-used {
+.project-tags {
   display: flex;
-  gap: 0.5rem;
+  flex-wrap: wrap;
+  gap: 0.4rem;
   margin-bottom: 1.2rem;
 }
 
-.tech-stack-used span {
-  background: #1e1b4b;
-  color: #c7d2fe;
+.project-tags span {
+  background-color: rgba(255,255,255,0.03);
+  border: 1px solid rgba(255,255,255,0.06);
+  color: #94a3b8;
   font-size: 0.75rem;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
   font-family: 'Fira Code', monospace;
-  font-weight: 600;
 }
 
-.detail-title {
-  font-weight: 700;
-  color: #14b8a6;
-  margin-bottom: 0.8rem;
-}
-
-.project-detail ul {
-  padding-left: 1.2rem;
-  margin: 0 0 1.5rem;
-}
-
-.project-detail li {
-  margin-bottom: 0.6rem;
+.timeline-body p {
   color: #cbd5e1;
   font-size: 0.95rem;
+  margin-bottom: 1rem;
 }
 
-.project-link {
-  color: #6366f1;
-  font-weight: 700;
+.timeline-body ul {
+  padding-left: 1.1rem;
+  list-style-type: disc;
+  margin-bottom: 1.5rem;
+}
+
+.timeline-body li {
   font-size: 0.9rem;
+  color: #94a3b8;
+  margin-bottom: 0.5rem;
 }
 
-.project-link:hover {
-  text-decoration: underline;
+.timeline-body li strong {
+  color: #e2e8f0;
 }
 
-/* CONTACT & TERMINAL */
-.contact-info-box p {
-  font-size: 1.05rem;
-  color: #cbd5e1;
-  margin: 1rem 0;
+.project-links a {
+  font-size: 0.88rem;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  padding: 0.4rem 0.9rem;
+  border-radius: 6px;
+  background: rgba(99, 102, 241, 0.03);
 }
 
-.contact-info-box a {
+.project-links a:hover {
+  background: rgba(99, 102, 241, 0.1);
+}
+
+/* Contact Section */
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  margin-top: 2rem;
+}
+
+.contact-card {
+  background-color: #0f1322;
+  border: 1px solid rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.c-icon {
+  font-size: 1.5rem;
   color: #6366f1;
+}
+
+.c-text h5 {
+  color: #64748b;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.1rem;
+}
+
+.c-text p {
+  font-size: 0.9rem;
+  color: #f1f5f9;
   font-weight: 600;
 }
 
-.terminal-card {
-  padding: 0 !important;
-  background: #05070f !important;
-  border-color: #1e293b !important;
-  font-family: 'Fira Code', monospace;
-  overflow: hidden;
-}
-
-.terminal-header {
-  background: #0f111a;
-  padding: 0.75rem 1.2rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  border-bottom: 1px solid #1e293b;
-}
-
-.dot {
-  width: 10px;
-  height: 10px;
-  border-radius: 50%;
-}
-
-.dot.red { background: #ef4444; }
-.dot.yellow { background: #f59e0b; }
-.dot.green { background: #10b981; }
-
-.terminal-title {
-  color: #64748b;
-  font-size: 0.75rem;
-  margin-left: 0.5rem;
-}
-
-.terminal-body {
-  padding: 1.5rem;
-  font-size: 0.85rem;
-  line-height: 1.6;
-}
-
-.terminal-body p { margin: 0 0 0.6rem; }
-.t-blue { color: #38bdf8; }
-.t-green { color: #4ade80; }
-.t-purple { color: #c084fc; }
-.t-gray { color: #475569; }
-
-/* FOOTER */
-.footer {
-  padding: 2.5rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.04);
-}
-
-.footer p {
-  margin: 0;
-  color: #475569;
-  font-size: 0.85rem;
-}
-
-/* RESPONSIVE MEDIA QUERIES */
-@media (max-width: 960px) {
-  .hero {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: 2.5rem;
+/* ==========================================================================
+   RESPONSIVE DESIGN (모바일 대응)
+   ========================================================================== */
+@media (max-width: 992px) {
+  .layout-wrapper {
+    flex-direction: column;
   }
-  .hero-image-zone { order: -1; }
-  .hero-desc { margin: 0 auto; }
-  .hero-actions { justify-content: center; }
-  .section-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-  .skills-dashboard { grid-template-columns: 1fr; }
-  .project-card-summary { grid-template-columns: 1fr; gap: 0.5rem; text-align: left; }
-  .project-badge { text-align: left; }
-}
-
-@media (max-width: 600px) {
-  .topbar-inner { flex-direction: column; gap: 0.8rem; }
-  .button { width: 100%; }
+  
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 2rem;
+  }
+  
+  .sidebar-nav {
+    flex-direction: row;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 1.5rem;
+    gap: 0.3rem;
+  }
+  
+  .sidebar-nav a {
+    padding: 0.5rem 0.8rem;
+    font-size: 0.85rem;
+  }
+  
+  .sidebar-nav a:hover {
+    padding-left: 0.8rem;
+  }
+  
+  .sidebar-footer {
+    display: none;
+  }
+  
+  .content-section {
+    padding: 3.5rem 1.5rem;
+  }
+  
+  .about-highlights {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
 }
