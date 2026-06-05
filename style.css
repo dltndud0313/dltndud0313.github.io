@@ -272,13 +272,61 @@ button, input, textarea {
   pointer-events: none;
 }
 
-.project-card h3 {
+.project-card details {
+  color: inherit;
+}
+
+.project-card summary {
+  list-style: none;
+  cursor: pointer;
+}
+
+.project-card summary::-webkit-details-marker {
+  display: none;
+}
+
+.project-card summary .project-card-summary {
+  display: grid;
+  gap: 0.65rem;
+}
+
+.project-card summary h3 {
+  margin: 0 0 0.8rem;
+}
+
+.project-card summary p {
+  margin: 0;
+  color: rgba(233,237,246,0.78);
+}
+
+.project-card details[open] summary h3 {
+  color: #7c93ff;
+}
+
+.project-detail {
+  margin-top: 1.5rem;
+  padding-top: 1.4rem;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.project-detail p {
   margin: 0 0 1rem;
+  color: rgba(233,237,246,0.78);
+}
+
+.project-detail ul {
+  margin: 0 0 1rem;
+  padding-left: 1.2rem;
+}
+
+.project-detail li {
+  margin-bottom: 0.7rem;
+  color: rgba(233,237,246,0.78);
 }
 
 .project-link {
   display: inline-block;
-  margin-top: 1.2rem;
+  margin-top: 0.8rem;
   color: #7c93ff;
   font-weight: 700;
 }
