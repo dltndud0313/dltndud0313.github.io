@@ -4,7 +4,6 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>이수영 포트폴리오</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -14,7 +13,7 @@
     <aside class="sidebar">
       <div class="sidebar-sticky">
         <div class="profile-avatar">
-          <img src="profile.jpg" alt="이수영 프로필 사진" onerror="this.src='https://via.placeholder.com/150';">
+          <img src="profile.jpg" alt="이수영 프로필 사진">
         </div>
         <h1 class="profile-name">이수영</h1>
         <div class="profile-typing">
@@ -307,14 +306,25 @@
     </main>
   </div>
 
-  <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
   <script>
-    var typed = new Typed('#typed-text', {
-      strings: ['Embedded SW Developer.', 'Robotics Engineer.', 'Problem Solver.'], [cite: 2]
-      typeSpeed: 60,
-      backSpeed: 30,
-      loop: true
-    });
+    // 간단한 타이핑 애니메이션 (외부 라이브러리 불필요)
+    (function(){
+      const el = document.getElementById('typed-text');
+      if(!el) return;
+      const words = ['Embedded SW Developer.', 'Robotics Engineer.', 'Problem Solver.'];
+      let w=0, i=0, forward=true;
+      function step(){
+        const current = words[w];
+        el.textContent = current.slice(0,i);
+        if(forward){
+          if(i<current.length) i++; else { forward=false; setTimeout(step,800); return }
+        } else {
+          if(i>0) i--; else { forward=true; w=(w+1)%words.length }
+        }
+        setTimeout(step, forward?60:30);
+      }
+      step();
+    })();
   </script>
 </body>
 </html>
