@@ -36,7 +36,7 @@ ul {
    ========================================================================== */
 .sidebar {
   width: 300px;
-  min-width: 300px; /* 사이드바 크기가 찌그러지지 않도록 확실히 고정 */
+  min-width: 300px;
   background-color: #0b0f19;
   height: 100vh;
   position: sticky;
@@ -146,39 +146,38 @@ ul {
 /* ==========================================================================
    RIGHT CONTENT (스크롤 컨텐츠 패널)
    ========================================================================== */
-/* 우측 본문 스크롤 영역 전체 */
+/* 우측 본문 영역 전체 정렬 통제 */
 .main-content {
   flex: 1;
   min-width: 0;
   display: flex;
   flex-direction: column;
-  align-items: center;       /* 자식 요소인 각 섹션 블록들을 화면 가로 기준 정중앙으로 배치 */
+  align-items: center;       /* 자식 섹션 박스들을 화면 기준 항상 수평 중앙에 둠 */
   width: 100%;
 }
 
-/* 본문 내용을 직접 감싸는 기본 컨테이너 */
+/* 본문 알맹이를 품는 핵심 컨테이너 */
 .content-section {
   padding: 5.5rem 2rem;
   width: 100%;
-  max-width: 900px;          /* 본문 폭이 무한정 늘어나 가독성이 깨지지 않도록 정밀 제어 */
-  margin: 0 auto;            /* 좌우 마진을 자동으로 배분해 확실하게 중앙 고정 */
+  max-width: 900px;          /* 본문 정렬이 과도하게 벌어지지 않도록 고정 */
+  margin: 0 auto;            /* 남는 여백을 좌우 균등 배분하여 물리적 중앙 배치 보장 */
   display: flex;
   flex-direction: column;
-  align-items: center;       /* 내부의 제목, 한줄 요약글 등을 가운데 정렬 */
+  align-items: center;       /* 내부 텍스트 및 그리드 구조를 가운데 정렬 */
 }
 
-/* 배경 구역 (전체 폭을 채우며 내부에 content-section을 수평 중앙 정렬) */
+/* 배경 색상이 끝까지 채워지는 섹션 (교차 연출 구역) */
 .content-sectionAlt {
   background-color: #070b14;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
   width: 100%;
   display: flex;
-  justify-content: center;   /* 부모 가로폭이 100%일 때 내부 자식이 정확히 가운데 오도록 정렬 */
+  justify-content: center;   /* 내부에 박스를 정중앙으로 유도 */
   align-items: center;
 }
 
-/* Alt 구역 바로 아래에 붙은 실제 섹션 박스의 패딩 및 여백 고정 */
 .content-sectionAlt > .content-section {
   padding: 5.5rem 2rem;
   margin: 0 auto;
@@ -194,7 +193,7 @@ ul {
   text-align: center;
 }
 
-/* 제목 밑줄 장식선 정중앙 배치 보정 */
+/* 데코레이션 하단 바 정중앙 배치 */
 .section-title::after {
   content: '';
   position: absolute;
@@ -227,7 +226,7 @@ ul {
   color: #f8fafc;
   line-height: 1.5;
   margin-bottom: 1.2rem;
-  border-bottom: 2px solid #14b8a6; /* 미관상 왼쪽 세로선 대신 하단 중앙선으로 레이아웃 흐름 일치 */
+  border-bottom: 2px solid #14b8a6;
   padding-bottom: 0.8rem;
   display: inline-block;
 }
@@ -267,7 +266,7 @@ ul {
   line-height: 1.6;
 }
 
-/* Skills Layout */
+/* Skills Layout (좌측 정렬 가독성 유지) */
 .skills-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -280,7 +279,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 1.8rem;
-  text-align: left; /* 카드 내부의 텍스트 리스트는 가독성을 유지하기 위해 좌측 정렬 */
+  text-align: left;
 }
 
 .skill-box h3 {
@@ -320,7 +319,7 @@ ul {
 }
 
 /* ==========================================================================
-   TIMELINE (경력 및 프로젝트 공통 타임라인 디자인)
+   TIMELINE (경력 및 프로젝트 타임라인)
    ========================================================================== */
 .timeline {
   position: relative;
@@ -447,7 +446,9 @@ ul {
   color: #e2e8f0;
 }
 
-/* Education & Awards Cards Structure */
+/* ==========================================================================
+   INTEGRATED INFO GRID (통합 이력 카드 구조)
+   ========================================================================== */
 .info-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -480,11 +481,15 @@ ul {
 
 .info-list li {
   position: relative;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.8rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.02);
 }
 
 .info-list li:last-child {
   margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: none;
 }
 
 .info-date {
@@ -503,10 +508,17 @@ ul {
   margin-bottom: 0.2rem;
 }
 
-.info-list p {
+.info-role {
   font-size: 0.88rem;
-  color: #64748b;
-  line-height: 1.5;
+  color: #818cf8;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.info-desc {
+  font-size: 0.88rem;
+  color: #94a3b8;
+  line-height: 1.6;
 }
 
 /* Contact Cards Design */
@@ -549,7 +561,7 @@ ul {
 }
 
 /* ==========================================================================
-   RESPONSIVE (모바일 스크린 대응 최적화)
+   RESPONSIVE (모바일 스크린 예외 처리)
    ========================================================================== */
 @media (max-width: 992px) {
   .layout-wrapper {

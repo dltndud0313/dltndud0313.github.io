@@ -11,40 +11,35 @@
 
   <div class="layout-wrapper">
     
-    <!-- LEFT SIDEBAR -->
     <aside class="sidebar">
         <div class="sidebar-sticky">
             <div class="profile-avatar">
-            <img src="profile.jpg" alt="이수영 프로필 사진" onerror="this.src='https://placehold.co/150x150/0f1322/a9b6cc?text=SUYOUNG';">
+              <img src="profile.jpg" alt="이수영 프로필 사진" onerror="this.src='https://placehold.co/150x150/0f1322/a9b6cc?text=SUYOUNG';">
             </div>
-            <!-- 이름 영역 수정: 국문과 영문을 매끄럽게 배치 -->
             <div class="profile-name-wrap">
                 <h1 class="profile-name">이수영 <span class="profile-name-eng">(Lee Soo-young)</span></h1>
             </div>
             <div class="profile-typing">
-            I'm an <span id="typed-text"></span>
+              I'm an <span id="typed-text"></span>
             </div>
             
             <nav class="sidebar-nav">
-            <a href="#about"><i class="fa-regular fa-user"></i> About Me</a>
-            <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience</a>
-            <a href="#education"><i class="fa-solid fa-graduation-cap"></i> Education & Awards</a>
-            <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
-            <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
-            <a href="#contact"><i class="fa-regular fa-envelope"></i> Contact</a>
+              <a href="#about"><i class="fa-regular fa-user"></i> About Me</a>
+              <a href="#experience"><i class="fa-solid fa-briefcase"></i> Experience & History</a>
+              <a href="#skills"><i class="fa-solid fa-code"></i> Skills</a>
+              <a href="#projects"><i class="fa-solid fa-diagram-project"></i> Projects</a>
+              <a href="#contact"><i class="fa-regular fa-envelope"></i> Contact</a>
             </nav>
 
             <div class="sidebar-footer">
-            <p>© 2026 Lee Soo-young</p>
-            <p>Powered by GitHub Pages</p>
+              <p>© 2026 Lee Soo-young</p>
+              <p>Powered by GitHub Pages</p>
             </div>
         </div>
     </aside>
 
-    <!-- MAIN CONTENT -->
     <main class="main-content">
 
-      <!-- 1. ABOUT SECTION -->
       <section id="about" class="content-section">
         <h2 class="section-title">About Me</h2>
         <div class="about-hero">
@@ -75,86 +70,58 @@
         </div>
       </section>
 
-      <!-- 2. EXPERIENCE SECTION -->
       <section id="experience" class="content-sectionAlt">
         <div class="content-section">
-          <h2 class="section-title">Experience</h2>
-          <p class="section-subtitle">이전 직무에서의 주요 수행 업무 및 역할입니다.</p>
+          <h2 class="section-title">Experience & Education</h2>
+          <p class="section-subtitle">공간 기획부터 현장 총괄까지, 문제를 주도적으로 해결해 온 발자취입니다.</p>
           
-          <div class="timeline">
-            <div class="timeline-item">
-              <div class="timeline-badge"><i class="fa-solid fa-briefcase"></i></div>
-              <div class="timeline-panel">
-                <div class="timeline-heading">
-                  <span class="project-duration">2023.03 - 2024.04</span>
-                  <h3 class="project-name">(주)마초의사춘기</h3>
-                  <p class="project-role">연출팀 사원 (플랜테리어 공간 기획 및 현장 시공 관리)</p>
-                </div>
-                <div class="timeline-body">
-                  <ul>
-                    <li><strong>공간 컨셉 기획 및 디자인 제안:</strong> 클라이언트 요구사항 분석, 레퍼런스 리서치, 공간 맞춤형 소품 선정 및 무드 도출</li>
-                    <li><strong>비주얼 샘플링 및 시안 구체화:</strong> 시각화를 위한 스케일링(Scaling) 및 샘플 연출, 클라이언트 협의 주도</li>
-                    <li><strong>현장 시공 총괄 및 공간 연출(VMD):</strong> 조화·오브제 배치 중심의 공간 스타일링, 시공 감리 및 마감 퀄리티 관리</li>
-                    <li><strong>리소스 관리 및 운영:</strong> 현장 투입 인력 채용 및 스케줄링, 시공 자재 물류 관리 및 운송 프로세스 운영</li>
-                  </ul>
-                </div>
-              </div>
+          <div class="info-grid">
+            <div class="info-card">
+              <h3><i class="fa-solid fa-history"></i> Career & Degree</h3>
+              <ul class="info-list">
+                <li>
+                  <span class="info-date">2023.03 - 2024.04</span>
+                  <strong>(주)마초의사춘기</strong>
+                  <p class="info-role">연출팀 사원 (플랜테리어 공간 기획 및 현장 시공 관리)</p>
+                  <p class="info-desc">클라이언트 요구사항 분석 및 무드 도출, 시각화 시안 구체화 및 샘플 연출, 조화·오브제 배치 VMD 총괄, 현장 투입 인력 및 시공 자재 물류 프로세스 운영.</p>
+                </li>
+                <li>
+                  <span class="info-date">2017.03 - 2023.02</span>
+                  <strong>청주대학교 환경조경학과 졸업</strong>
+                  <p class="info-desc">공간 기획, 도면 설계, 기술 요구사항 구현을 경험하며 하드웨어적 구조 감각과 설계 파이프라인의 기초를 체득.</p>
+                </li>
+              </ul>
+            </div>
+
+            <div class="info-card">
+              <h3><i class="fa-solid fa-award"></i> Awards & Certificates</h3>
+              <ul class="info-list">
+                <li>
+                  <span class="info-date">2023.05</span>
+                  <strong>조경학과 졸업작품전 최우수상</strong>
+                  <p class="info-desc">청주대학교 (4학년 졸업작품전)</p>
+                </li>
+                <li>
+                  <span class="info-date">2022.05</span>
+                  <strong>조경학과 작품전 최우수상</strong>
+                  <p class="info-desc">청주대학교 (3학년 작품전)</p>
+                </li>
+                <li>
+                  <span class="info-date">2017.04</span>
+                  <strong>1종 보통 운전면허</strong>
+                  <p class="info-desc">경찰청</p>
+                </li>
+                <li>
+                  <span class="info-date">2016.07</span>
+                  <strong>조경기능사</strong>
+                  <p class="info-desc">한국산업인력공단</p>
+                </li>
+              </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- 3. EDUCATION & AWARDS SECTION -->
-      <section id="education" class="content-section">
-        <h2 class="section-title">Education & Awards</h2>
-        <p class="section-subtitle">학업 역량, 이수 교육 및 대내외 수상 내역입니다.</p>
-        
-        <div class="info-grid">
-          <div class="info-card">
-            <h3><i class="fa-solid fa-graduation-cap"></i> Education</h3>
-            <ul class="info-list">
-              <li>
-                <span class="info-date">2025.07 - 현재</span>
-                <strong>SSAFY (삼성청년SW아카데미) 14기 이수 중</strong>
-                <p>Python, 알고리즘, 웹 백엔드 시스템 및 다수의 로봇 인지/임베디드 하드웨어 통합 프로젝트 수행</p>
-              </li>
-              <li>
-                <span class="info-date">2017.03 - 2023.02</span>
-                <strong>청주대학교 환경조경학과 졸업</strong>
-                <p>공간 기획, 도면 설계, 기술 요구사항 구현 관련 하드웨어적 구조 감각 체득</p>
-              </li>
-            </ul>
-          </div>
-
-          <div class="info-card">
-            <h3><i class="fa-solid fa-award"></i> Awards & Certificates</h3>
-            <ul class="info-list">
-              <li>
-                <span class="info-date">2023.05</span>
-                <strong>조경학과 졸업작품전 (4학년) 최우수상</strong>
-                <p>청주대학교</p>
-              </li>
-              <li>
-                <span class="info-date">2022.05</span>
-                <strong>조경학과 작품전 (3학년) 최우수상</strong>
-                <p>청주대학교</p>
-              </li>
-              <li>
-                <span class="info-date">2017.04</span>
-                <strong>1종 보통 운전면허</strong>
-                <p>경찰청</p>
-              </li>
-              <li>
-                <span class="info-date">2016.07</span>
-                <strong>조경기능사</strong>
-                <p>한국산업인력공단</p>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      <!-- 4. SKILLS SECTION -->
       <section id="skills" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Skills</h2>
@@ -207,14 +174,12 @@
         </div>
       </section>
 
-      <!-- 5. PROJECTS SECTION -->
       <section id="projects" class="content-section">
         <h2 class="section-title">Projects</h2>
         <p class="section-subtitle">수행한 주요 프로젝트 상세 내용입니다.</p>
 
         <div class="timeline">
           
-          <!-- IMO Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -238,7 +203,6 @@
             </div>
           </div>
 
-          <!-- 적재적소 Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -261,7 +225,6 @@
             </div>
           </div>
 
-          <!-- SSARA Project -->
           <div class="timeline-item">
             <div class="timeline-badge"><i class="fa-solid fa-circle-dot"></i></div>
             <div class="timeline-panel">
@@ -287,7 +250,6 @@
         </div>
       </section>
 
-      <!-- 6. CONTACT SECTION -->
       <section id="contact" class="content-sectionAlt">
         <div class="content-section">
           <h2 class="section-title">Contact</h2>
