@@ -67,11 +67,29 @@ ul {
   object-fit: cover;
 }
 
+/* 이름 영역 컨테이너 및 국/영문 스타일 */
+.profile-name-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 0.4rem;
+}
+
 .profile-name {
   font-size: 1.6rem;
   font-weight: 700;
   color: #f1f5f9;
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.2rem;
+}
+
+.profile-name-eng {
+  display: block;
+  font-size: 0.95rem;
+  color: #64748b;
+  font-weight: 500;
+  letter-spacing: 0.5px;
 }
 
 .profile-typing {
@@ -126,17 +144,32 @@ ul {
 .main-content {
   flex: 1;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 전체 섹션 블록들을 화면 중앙으로 정렬 */
 }
 
 .content-section {
   padding: 5.5rem 4rem;
-  max-width: 950px;
+  width: 100%;
+  max-width: 1000px; /* 본문이 너무 퍼지지 않도록 최대 너비 최적화 */
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* 내부 요소들을 가로축 기준 가운데 정렬 */
 }
 
 .content-sectionAlt {
   background-color: #070b14;
   border-top: 1px solid rgba(255, 255, 255, 0.02);
   border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+  width: 100%;
+  display: flex;
+  justify-content: center; /* 배경이 100% 채워진 상태에서 내부 content-section을 가운데로 정렬 */
+}
+
+/* Alt 구역 내부의 실제 중첩 배치 구조 수정 */
+.content-sectionAlt > .content-section {
+  padding: 5.5rem 4rem;
 }
 
 .section-title {
@@ -146,12 +179,15 @@ ul {
   position: relative;
   padding-bottom: 0.8rem;
   margin-bottom: 1.5rem;
+  text-align: center; /* 타이틀 텍스트 중앙 정렬 */
 }
 
+/* 밑줄 장식선이 글자 중앙에 위치하도록 수정 */
 .section-title::after {
   content: '';
   position: absolute;
-  left: 0;
+  left: 50%;
+  transform: translateX(-50%);
   bottom: 0;
   width: 50px;
   height: 4px;
@@ -163,11 +199,14 @@ ul {
   color: #64748b;
   font-size: 1.05rem;
   margin-bottom: 2.5rem;
+  text-align: center; /* 서브타이틀 텍스트 중앙 정렬 */
 }
 
 /* About Highlights Grid */
 .about-hero {
   margin-bottom: 3rem;
+  text-align: center; /* 자기소개 글 가운데 정렬 */
+  max-width: 850px;
 }
 
 .lead-text {
@@ -176,8 +215,10 @@ ul {
   color: #f8fafc;
   line-height: 1.5;
   margin-bottom: 1.2rem;
-  border-left: 3px solid #14b8a6;
-  padding-left: 1rem;
+  border-left: none; /* 기존 왼쪽 세로선 제거 */
+  border-bottom: 2px solid #14b8a6; /* 강조를 아래 가로선으로 변경하여 중앙 배치 연출 */
+  padding-bottom: 0.8rem;
+  display: inline-block;
 }
 
 .about-highlights {
@@ -185,6 +226,7 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem;
   margin-top: 3.5rem;
+  width: 100%;
 }
 
 .highlight-item {
@@ -192,6 +234,7 @@ ul {
   border: 1px solid rgba(255,255,255,0.03);
   padding: 1.8rem 1.5rem;
   border-radius: 12px;
+  text-align: center; /* 핵심 역량 카드 내부 내용 중앙 정렬 */
 }
 
 .icon-wrap {
@@ -218,6 +261,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
 }
 
 .skill-box {
@@ -225,6 +269,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 1.8rem;
+  text-align: left; /* 긴 스킬 설명 구조는 가독성을 위해 좌측 유지 */
 }
 
 .skill-box h3 {
@@ -269,6 +314,8 @@ ul {
 .timeline {
   position: relative;
   padding: 1rem 0;
+  width: 100%;
+  max-width: 850px; /* 타임라인이 너무 벌어지지 않도록 최적화 */
 }
 
 .timeline::before {
@@ -313,6 +360,7 @@ ul {
   border-radius: 12px;
   padding: 2rem;
   box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+  text-align: left; /* 다량의 상세 텍스트를 담은 패널은 가독성을 위해 좌측 정렬 */
 }
 
 .project-duration {
@@ -394,6 +442,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 1.5rem;
+  width: 100%;
 }
 
 .info-card {
@@ -401,6 +450,7 @@ ul {
   border: 1px solid rgba(255, 255, 255, 0.03);
   border-radius: 12px;
   padding: 2rem;
+  text-align: left;
 }
 
 .info-card h3 {
@@ -455,6 +505,7 @@ ul {
   grid-template-columns: repeat(3, 1fr);
   gap: 1.2rem;
   margin-top: 2rem;
+  width: 100%;
 }
 
 .contact-card {
@@ -465,6 +516,7 @@ ul {
   display: flex;
   align-items: center;
   gap: 1rem;
+  text-align: left;
 }
 
 .c-icon {
@@ -524,8 +576,14 @@ ul {
     display: none;
   }
   
-  .content-section {
+  .main-content {
+    align-items: stretch; /* 모바일에서는 가득 차도록 변경 */
+  }
+
+  .content-section,
+  .content-sectionAlt > .content-section {
     padding: 3.5rem 1.5rem;
+    max-width: 100%;
   }
   
   .about-highlights, .skills-grid, .info-grid, .contact-grid {
