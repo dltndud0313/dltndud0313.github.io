@@ -12,111 +12,212 @@
       <div class="brand">dltndud0313</div>
       <nav class="nav-links">
         <a href="#about">소개</a>
+        <a href="#skills">기술 스택</a>
         <a href="#projects">프로젝트</a>
-        <a href="#skills">기술</a>
-        <a href="#contact">연락</a>
+        <a href="#contact">연락처</a>
       </nav>
     </div>
   </header>
 
   <main>
+    <!-- HERO SECTION -->
     <section class="hero container" id="home">
       <div class="hero-copy">
-        <p class="eyebrow">소프트웨어 개발자 포트폴리오</p>
-        <h1>안녕하세요, 저는 <span>dltndud0313</span>입니다.</h1>
-        <p>안정적이고 확장 가능한 소프트웨어를 만드는 것을 좋아합니다. 효율적인 알고리즘과 협업 가능한 코드를 지향합니다.</p>
+        <p class="eyebrow">Embedded & Robotics SW Developer</p>
+        <h1>안녕하세요, <br>저는 <span>이수영</span>입니다.</h1>
+        <p class="hero-desc">
+          센서 데이터와 로봇 시스템을 실제로 동작하는 결과물로 연결하는 개발자입니다. 
+          ESP32 기반 펌웨어 개발부터 Jetson 환경의 ROS2 시스템까지, 하드웨어-소프트웨어 통합 경험을 보유하고 있습니다.
+        </p>
         <div class="hero-actions">
           <a class="button primary" href="#projects">프로젝트 보기</a>
           <a class="button secondary" href="#contact">연락하기</a>
         </div>
       </div>
-      <div class="hero-image">
-        <div class="device-mockup">
-          <div class="screen"></div>
+      <div class="hero-image-zone">
+        <div class="profile-hex-wrap">
+          <!-- 수영님의 사진 파일명을 profile.jpg로 저장하여 같은 폴더에 넣어주세요 -->
+          <img src="profile.jpg" alt="이수영 프로필 사진" class="profile-img" onerror="this.style.display='none';">
+          <div class="profile-fallback-text">&lt;/&gt;</div>
         </div>
       </div>
     </section>
 
+    <!-- ABOUT ME SECTION -->
     <section class="section" id="about">
       <div class="container section-grid">
         <div>
-          <h2>소개</h2>
-          <p>저는 신뢰성 있는 시스템과 좋은 코드 품질을 중요하게 생각하는 소프트웨어 개발자입니다. 다양한 플랫폼과 언어를 활용해 실용적인 소프트웨어를 구현합니다.</p>
-          <p>GitHub, 포트폴리오 저장소, 프로젝트 기록을 중심으로 작업을 정리하고 있습니다.</p>
+          <h2>About Me</h2>
+          <div class="about-quote">
+            <span class="quote-mark">“</span>
+            <p>실제 하드웨어에서 안정적으로 동작하는 시스템을 만드는 개발자</p>
+          </div>
+          <p>센서 값이 단순히 출력되는 것을 넘어, 로봇과 상위 시스템이 신뢰할 수 있는 데이터로 가공되는 핵심 파이프라인 정립 과정을 중요하게 생각합니다.</p>
+          <p>3개의 핵심 프로젝트를 거치며 데이터 수집 안정화, 로봇 인식 및 제어 파이프라인 구축을 성공적으로 완수해 왔습니다.</p>
         </div>
-        <div class="card">
-          <h3>주요 역할</h3>
+        <div class="card spec-card">
+          <h3>핵심 역량 핵심 요약</h3>
           <ul>
-            <li>소프트웨어 설계</li>
-            <li>자료구조 및 알고리즘 구현</li>
-            <li>테스트 기반 개발</li>
-            <li>협업 가능한 코드 작성</li>
+            <li><strong>센서 수집 안정화:</strong> EMG 4채널 + IMU 3개 동시 수집 펌웨어 설계 능력을 갖추어, 하드웨어 신호를 상위 판단 로직의 유효 입력으로 완벽히 가공합니다.</li>
+            <li><strong>로봇 인식 파이프라인:</strong> RGB/Depth 이미지 동기화, 객체 인식, 거리 추정 처리를 거쳐 ROS2 기반 Perception 데이터를 생성합니다.</li>
+            <li><strong>알고리즘-제어 연결:</strong> 3D Bin Packing 알고리즘 연산 결과를 좌표 변환 알고리즘을 통해 로봇팔 배치 명령으로 변환·실행한 경험이 있습니다.</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <section class="section section-alt" id="projects">
+    <!-- SKILLS SECTION -->
+    <section class="section section-alt" id="skills">
       <div class="container">
         <div class="section-header">
-          <h2>프로젝트</h2>
-          <p>최근에 작업한 프로젝트입니다. 필요에 따라 내용을 수정해서 바로 사용할 수 있습니다.</p>
+          <h2>Technical Skills</h2>
+          <p>하드웨어 제어부터 상위 자율주행 시뮬레이션까지 보유한 기술 스택입니다.</p>
         </div>
+        
+        <div class="skills-dashboard">
+          <!-- Programming -->
+          <div class="skill-category-card">
+            <div class="category-title">&gt;_ Programming</div>
+            <p class="category-subtitle">개발 언어 및 웹/데이터 처리 기반 기술</p>
+            <div class="tags">
+              <span class="tag checked">C/C++</span>
+              <span class="tag checked">Python</span>
+              <span class="tag checked">JavaScript</span>
+              <span class="tag checked">SQL</span>
+              <span class="tag checked">SQLite</span>
+              <span class="tag checked">Django</span>
+              <span class="tag checked">Vue.js</span>
+            </div>
+          </div>
+
+          <!-- Robotics / Embedded -->
+          <div class="skill-category-card">
+            <div class="category-title">⚙️ Robotics / Embedded</div>
+            <p class="category-subtitle">로봇 시스템, 임베디드 리눅스, 센서 연동</p>
+            <div class="tags">
+              <span class="tag checked">ROS2 Humble</span>
+              <span class="tag checked">ESP-IDF</span>
+              <span class="tag checked">ESP32</span>
+              <span class="tag checked">Jetson Orin Nano</span>
+              <span class="tag checked">Embedded Linux</span>
+              <span class="tag checked">Robot Perception</span>
+              <span class="tag checked">AIoT</span>
+              <span class="tag">RTAB-Map / SLAM</span>
+            </div>
+          </div>
+
+          <!-- AI / Vision -->
+          <div class="skill-category-card">
+            <div class="category-title">👁️ AI / Vision / Simulation</div>
+            <p class="category-subtitle">객체 인식, 영상 처리, 추론 최적화</p>
+            <div class="tags">
+              <span class="tag checked">YOLOv8</span>
+              <span class="tag checked">TensorRT</span>
+              <span class="tag checked">OpenCV</span>
+              <span class="tag checked">PyTorch</span>
+              <span class="tag checked">Computer Vision</span>
+              <span class="tag checked">3D Bin Packing</span>
+            </div>
+          </div>
+
+          <!-- Simulation / Infra -->
+          <div class="skill-category-card">
+            <div class="category-title">🌐 Simulation / Infra</div>
+            <p class="category-subtitle">시뮬레이션, 통신, 개발 환경</p>
+            <div class="tags">
+              <span class="tag checked">Isaac Sim</span>
+              <span class="tag checked">Simulation</span>
+              <span class="tag checked">Autonomous Driving</span>
+              <span class="tag checked">MQTT</span>
+              <span class="tag checked">Docker</span>
+              <span class="tag checked">Ubuntu</span>
+              <span class="tag checked">Git</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS SECTION -->
+    <section class="section" id="projects">
+      <div class="container">
+        <div class="section-header">
+          <h2>Projects</h2>
+          <p>2026년 진행한 핵심 프로젝트 아카이브입니다. 카드를 클릭하면 상세 내용을 볼 수 있습니다.</p>
+        </div>
+        
         <div class="project-grid">
+          <!-- SSARA -->
           <article class="project-card">
-            <details>
+            <details open>
               <summary>
                 <div class="project-card-summary">
-                  <h3>ssara</h3>
-                  <p>SW 개발자로서 자료구조와 시스템 설계를 적용한 프로젝트입니다.</p>
+                  <span class="project-date">2026.01 - 2026.02 (6인 팀)</span>
+                  <h3>SSARA</h3>
+                  <p class="project-badge">시각장애인 안내용 자율주행 4족 보행 로봇</p>
                 </div>
               </summary>
               <div class="project-detail">
-                <p>ssara는 내부 자료 구조를 최적화하고, 처리 성능과 유지보수성을 고려해 구현한 프로젝트입니다. 모듈화된 구조로 확장성이 좋습니다.</p>
+                <div class="tech-stack-used">
+                  <span>Jetson</span><span>ROS2</span><span>YOLOv8</span><span>SLAM</span><span>MQTT</span>
+                </div>
+                <p class="detail-title">📦 담당 범위: Perception 파이프라인 및 ROS2-MQTT 연동</p>
                 <ul>
-                  <li>자료구조 기반 로직 설계</li>
-                  <li>성능 최적화 및 메모리 관리</li>
-                  <li>테스트 케이스 중심 개발</li>
+                  <li><strong>RGB-D 이미지 동기화:</strong> 객체 인식 결과와 Depth 거리를 결합하여 로봇 실시간 판단 데이터 생성</li>
+                  <li><strong>추론 부하 최적화:</strong> TensorRT 엔진 최적화 및 skip_rate=5 처리를 통해 실효 추론 빈도를 6FPS로 낮춰 실시간성과 연산 균형 보장</li>
+                  <li><strong>안정성 확보:</strong> 오차가 큰 외곽 Depth 값을 필터링하고 median(중앙값) 알고리즘 필터를 도입해 데이터 신뢰도 극대화</li>
                 </ul>
-                <a href="https://github.com/dltndud0313/ssara" class="project-link" target="_blank" rel="noreferrer">GitHub 저장소</a>
+                <a href="https://github.com/dltndud0313/IMO" class="project-link" target="_blank" rel="noreferrer">GitHub Repo &rarr;</a>
               </div>
             </details>
           </article>
+
+          <!-- 적재적소 -->
           <article class="project-card">
             <details>
               <summary>
                 <div class="project-card-summary">
-                  <h3>jeokjaejeokso</h3>
-                  <p>복잡한 데이터 구조를 처리하고 시스템 흐름을 관리하는 SW 개발 프로젝트입니다.</p>
+                  <span class="project-date">2026.02 - 2026.03 (6인 팀)</span>
+                  <h3>적재적소</h3>
+                  <p class="project-badge">물류센터 롤테이너 적재 효율 향상 및 자동화 검증</p>
                 </div>
               </summary>
               <div class="project-detail">
-                <p>jeokjaejeokso는 데이터 파싱과 프로세스 제어가 핵심인 프로젝트로, 안정적인 데이터 흐름과 오류 처리를 중점으로 구현했습니다.</p>
+                <div class="tech-stack-used">
+                  <span>Python</span><span>Isaac Sim</span><span>3D Bin Packing</span><span>UR20</span><span>좌표 변환</span>
+                </div>
+                <p class="detail-title">📦 담당 범위: Packing 알고리즘 연산 결과 &rarr; 로봇팔 명령 파이프라인 구축</p>
                 <ul>
-                  <li>데이터 구조 설계 및 처리 파이프라인 구현</li>
-                  <li>에러 핸들링과 안정성 강화</li>
-                  <li>모듈 간 인터페이스 명확화</li>
+                  <li><strong>3D Bin Packing 직접 구현:</strong> 배치 가능 여부, 지지 면적, 누적 높이를 연산하는 오프라인 휴리스틱 알고리즘 개발</li>
+                  <li><strong>좌표 변환 시스템 설계:</strong> 격자(Grid) 기반 연산 공간 좌표를 로봇팔 제어용 박스 중심 좌표, 접근 높이, 배치 높이, Yaw 각도로 정밀 매핑</li>
+                  <li><strong>가상 검증 자동화:</strong> Isaac Sim 시뮬레이터 연동을 통해 attach &rarr; lift &rarr; place 공정 검증 파이프라인 구축 (성공 지표: lift_delta_z ≥ 0.04m 검증 완료)</li>
                 </ul>
-                <a href="https://github.com/dltndud0313/jeokjaejeokso" class="project-link" target="_blank" rel="noreferrer">GitHub 저장소</a>
+                <a href="https://github.com/dltndud0313/jeokjaejeokso" class="project-link" target="_blank" rel="noreferrer">GitHub Repo &rarr;</a>
               </div>
             </details>
           </article>
+
+          <!-- IMO -->
           <article class="project-card">
             <details>
               <summary>
                 <div class="project-card-summary">
-                  <h3>IMO</h3>
-                  <p>실용적인 기능과 협업 구조를 강조한 전체 소프트웨어 프로젝트입니다.</p>
+                  <span class="project-date">2026.04 - 2026.05 (6인 팀)</span>
+                  <h3>IMO (Inside Muscle Out)</h3>
+                  <p class="project-badge">EMG·IMU 생체/관성 센서 기반 웨어러블 운동 자세 분석 시스템</p>
                 </div>
               </summary>
               <div class="project-detail">
-                <p>IMO는 기능 중심으로 구성된 프로젝트로, 팀 개발에 적합한 확장성과 유지보수성을 고려해 설계했습니다.</p>
+                <div class="tech-stack-used">
+                  <span>ESP-IDF</span><span>C/C++</span><span>ESP32</span><span>ADC/I2C</span><span>Binary Protocol</span><span>CRC16</span>
+                </div>
+                <p class="detail-title">📦 담당 범위: 로우레벨 센서 데이터 수집 · 정밀 필터링 · 패킷 실시간 전송 펌웨어</p>
                 <ul>
-                  <li>모듈화된 아키텍처</li>
-                  <li>코드 리뷰와 협업을 고려한 구조</li>
-                  <li>프로젝트 문서화 및 테스트</li>
+                  <li><strong>초고속 센서 파이프라인 구축:</strong> 20ms 수집 주기를 보장하는 고성능 임베디드 데이터 아키텍처 수립</li>
+                  <li><strong>복합 노이즈 제어 필터링:</strong> 생체 데이터(EMG 4채널) 노이즈 제어를 위해 RMS, Baseline 보정, Noise floor, Smoothing 필터 구현 및 IMU 센서 미세 흔들림 보정(Bias Calibration, Deadzone) 적용</li>
+                  <li><strong>초경량 직렬 통신 설계:</strong> 데이터 무결성 유지를 위해 64-byte Binary V2 규격 스트림 및 CRC16 체크섬 검증 프로토콜 설계로 라즈베리 파이 전송단 최적화</li>
                 </ul>
-                <a href="https://github.com/dltndud0313/IMO" class="project-link" target="_blank" rel="noreferrer">GitHub 저장소</a>
+                <a href="https://github.com/dltndud0313/ssara" class="project-link" target="_blank" rel="noreferrer">GitHub Repo &rarr;</a>
               </div>
             </details>
           </article>
@@ -124,34 +225,30 @@
       </div>
     </section>
 
-    <section class="section" id="skills">
-      <div class="container">
-        <div class="section-header">
-          <h2>기술 스택</h2>
-          <p>소프트웨어 개발에 자주 사용하는 도구와 언어입니다.</p>
-        </div>
-        <div class="skills-grid">
-          <div class="skill-card">Python</div>
-          <div class="skill-card">Java</div>
-          <div class="skill-card">C++</div>
-          <div class="skill-card">Git</div>
-          <div class="skill-card">Database</div>
-          <div class="skill-card">System Design</div>
-        </div>
-      </div>
-    </section>
-
+    <!-- CONTACT SECTION -->
     <section class="section section-alt" id="contact">
       <div class="container section-grid">
         <div>
-          <h2>연락하기</h2>
-          <p>새로운 프로젝트나 협업에 대해 이야기하고 싶다면 언제든지 연락해주세요.</p>
-          <p>Email: <a href="mailto:example@example.com">example@example.com</a></p>
-          <p>GitHub: <a href="https://github.com/dltndud0313" target="_blank" rel="noreferrer">github.com/dltndud0313</a></p>
+          <h2>Contact</h2>
+          <p>하드웨어 제어 능력을 갖춘 소프트웨어 기술로 안정적인 시스템의 가치를 만들어 냅니다.<br>새로운 도전이나 협업 제안은 언제든 아래 채널로 연락해 주세요.</p>
+          <div class="contact-info-box">
+            <p>📧 <strong>Email:</strong> <a href="mailto:dltndud0313@naver.com">dltndud0313@naver.com</a></p>
+            <p>📞 <strong>Phone:</strong> <span>010-4151-1321</span></p>
+            <p>🐙 <strong>GitHub:</strong> <a href="https://github.com/dltndud0313" target="_blank" rel="noreferrer">github.com/dltndud0313</a></p>
+          </div>
         </div>
-        <div class="card">
-          <h3>간단한 메모</h3>
-          <p>이 페이지는 GitHub Pages에서 바로 배포할 수 있도록 HTML/CSS만으로 구성되었습니다.</p>
+        <div class="card spec-card terminal-card">
+          <div class="terminal-header">
+            <span class="dot red"></span><span class="dot yellow"></span><span class="dot green"></span>
+            <span class="terminal-title">system_info.sh</span>
+          </div>
+          <div class="terminal-body">
+            <p><span class="t-blue">lsy@robotics-desktop</span>:<span class="t-green">~</span>$ ./check_status.sh</p>
+            <p class="t-gray">[PROCESSING] Loading portfolio specifications...</p>
+            <p><span class="t-purple">● Status:</span> Available for Junior Software Engineer Role</p>
+            <p><span class="t-purple">● Location:</span> Gwangju / Seoul, South Korea</p>
+            <p><span class="t-purple">● Core:</span> ROS2, C++, Python, Embedded Firmware Architecture</p>
+          </div>
         </div>
       </div>
     </section>
@@ -159,7 +256,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <p>© 2026 dltndud0313. 포트폴리오 페이지 템플릿.</p>
+      <p>© 2026 Lee Soo-young. Powered by GitHub Pages.</p>
     </div>
   </footer>
 </body>
