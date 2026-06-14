@@ -625,3 +625,87 @@ ul {
     gap: 1rem;
   }
 }
+
+@media print {
+  html, body {
+    background: #fff !important;
+    color: #000 !important;
+    min-width: auto;
+  }
+
+  * {
+    text-shadow: none !important;
+    box-shadow: none !important;
+    background: transparent !important;
+    color: #000 !important;
+  }
+
+  a {
+    color: #000 !important;
+    text-decoration: none !important;
+  }
+
+  a::after {
+    content: " (" attr(href) ")";
+    font-size: 0.85em;
+    color: #000;
+  }
+
+  .layout-wrapper {
+    display: block !important;
+  }
+
+  .sidebar,
+  .sidebar-nav,
+  .sidebar-footer,
+  .profile-avatar,
+  .profile-typing,
+  .contact-card,
+  .skill-tags,
+  .project-tags,
+  .timeline-badge,
+  .status-tag,
+  .detail-tag,
+  .icon-wrap,
+  .c-icon {
+    display: none !important;
+  }
+
+  .main-content,
+  .content-section,
+  .content-sectionAlt > .content-section,
+  .content-sectionAlt {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0.5rem 0 !important;
+  }
+
+  section {
+    page-break-after: always;
+    break-after: page;
+    page-break-inside: avoid;
+  }
+
+  section:last-child {
+    page-break-after: auto;
+  }
+
+  .content-section,
+  .content-sectionAlt {
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+  }
+
+  .about-highlights,
+  .skills-grid,
+  .info-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  .content-section h2,
+  .section-title {
+    color: #000 !important;
+  }
+}
